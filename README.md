@@ -1,4 +1,4 @@
-<p align="center">##Covid Community Response</p>
+<p align="center"><b>Covid Community Response</b></p>
  
 The Covid Community Response Team was set up in an effort to help coordinate ongoing national & local community campaigns/efforts in the fight against Covid 19.
  
