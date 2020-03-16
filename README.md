@@ -1,5 +1,7 @@
+<p align="center"><img src="http://localhost/Covid19CommunityResponse/public/img/logo.jpg" width="200" alt="Covid Community Response Logo" ></p>
+
 ## Covid19 Community Response
- 
+
 The Covid Community Response Team was set up in an effort to help coordinate ongoing national & local community campaigns/efforts in the fight against Covid 19.
  
 Practical steps can be taken to harvest synergies on a national level resulting in a net benefit for communities on both a national and local level.
