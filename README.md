@@ -1,4 +1,4 @@
-<p align="center"><b>Covid Community Response</b></p>
+## Covid19 Community Response
  
 The Covid Community Response Team was set up in an effort to help coordinate ongoing national & local community campaigns/efforts in the fight against Covid 19.
  
@@ -25,7 +25,9 @@ In practical terms, the low hanging fruit for the accrual of synergies is throug
     b. Change your Database name in DB_DATABASE if you want to and create a new Databse with the same name in your phpmyadmin. <br>
     c. Set your DB_USERNAME and DB_PASSWORD
 
-8. To build npm run dev or npm run watch.
+8. run "php artisan migrate" to migrate the tables. More information can be found here :https://laravel.com/docs/7.x/migrations 
+
+9. To build npm run dev or npm run watch.
 
 
 ## License
