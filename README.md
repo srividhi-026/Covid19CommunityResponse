@@ -19,7 +19,10 @@ In practical terms, the low hanging fruit for the accrual of synergies is throug
 
 5. copy .env.example to a new file called .env
 
-6. In your terminal navigate to the folder where you have cloned the repo and run "php artisan key:generate"
+6. In your terminal navigate to the folder where you have cloned the repo and run the following
+    a. "php artisan key:generate"
+    b. "composer install" to generate vendor folder
+    c. "npm install" to generate node_modules folder
 
 7. Go to .env file you created and replace the following: 
     
