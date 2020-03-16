@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use GuzzleHttp\Psr7\Request;
-use Illuminate\View\View;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
+use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
-class RegisterController extends Controller
+;
+
+class RegisterController
 {
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +26,7 @@ class RegisterController extends Controller
      * @return void
      */
     public function __construct () {
-        $this->middleware('guest');
+        //$this->middleware('guest');
     }
 
     /**
@@ -42,11 +40,34 @@ class RegisterController extends Controller
 
     public function do_register (Request $request) {
         $request->validate([
-            'agenda_id' => 'required|int',
-            'text'      => 'required|string',
-            'position'  => 'required|int'
+            'first_name' => 'required|string',
+            'last_name'  => 'required|string',
+            'email'      => 'required|email|unique:users',
+            'phone'      => 'required',
+            'county'     => 'required|string',
+            'driving'    => 'required',
         ]);
 
+        $user = User::create([
+            'first_name' => $request->first_name,
+            'last_name'  => $request->last_name,
+            'email'      => $request->email,
+            'phone'      => $request->phone,
+            'county'     => $request->county,
+            'driving'    => $request->driving == 'on' ? 1 : 0
+        ]);
 
+        if ($user) {
+            $request->flash('message', 'Thank you for registering and giving your support!');
+
+            $response = redirect('register');
+        }
+        else {
+            $request->flash('error', 'There was an error saving your details, please try again.');
+
+            $response = redirect('register')->withInput();
+        }
+
+        return $response;
     }
 }

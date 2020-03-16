@@ -20,7 +20,7 @@
 
                     <div class="col s12 m4 footer-ul">
 
-                        <h5 class="white-text footer-heading footer-ul-margin">Contact</h5>
+                        <h5 class="white-text footer-heading footer-ul-margin">CONTACT</h5>
 
                         <ul class="footer-ul-margin">
 
@@ -34,7 +34,7 @@
 
                     <div class="col s12 m4">
 
-                        <h5 class="white-text footer-heading footer-ul-margin">STAY IN TOUCH </h5>
+                        <h5 class="white-text footer-heading footer-ul-margin">STAY IN TOUCH</h5>
 
                         <ul class="footer-ul-margin footer-social">
 
@@ -87,6 +87,7 @@
 
         <!-- font awesome icons -->
         <script defer src="https://kit.fontawesome.com/c94020147f.js" crossorigin="anonymous"></script>
+        <script defer src="{{ url('js/app.js') }}"></script>
 
     </body>
 

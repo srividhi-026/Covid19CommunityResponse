@@ -97,6 +97,59 @@ footer{
     display: inline;
 }
 
+.auth-form-container {
+    width: 100%;
+    min-height: 92.8vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.auth-form {
+    width: 400px;
+    padding:12px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.text-center{
+    text-align: center;
+}
+
+.checkbox {
+    height: 30px;
+}
+
+.notification-icon {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.notification {
+    padding: 15px !important;
+    display: flex;
+    align-self: center;
+
+}
+
+.notification span {
+    margin-top: 13px;
+    margin-left: 20px;
+    width: 100%;
+}
+
+.error{
+    color: red;
+}
 
 @media only screen and (max-width: 600px) {
     footer {
