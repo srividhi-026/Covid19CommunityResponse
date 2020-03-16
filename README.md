@@ -1,4 +1,4 @@
-<p align="center"><img src="http://localhost/Covid19CommunityResponse/public/img/logo.jpg" width="200" alt="Covid Community Response Logo" ></p>
+<p align="center"><img src="http://covidcommunityresponse.ie/img/logo.jpg" width="200" alt="Covid Community Response Logo" ></p>
 
 ## Covid19 Community Response
 
