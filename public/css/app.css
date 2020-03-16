@@ -17,14 +17,6 @@ nav {
     margin: 10px;
 }
 
-.logo-text {
-    position: absolute;
-    color: grey;
-    top: 15px;
-    left: 100px;
-    font-size: 25px;
-}
-
 .banner {
     height: 60vh;
 }
@@ -37,6 +29,12 @@ nav {
     margin-top: 12px;
     font-size: 40px;
     color: #363636;
+}
+
+.icon2 {
+    margin-top: 12px;
+    font-size: 40px;
+    color: #FFF;
 }
 
 .green-font {
@@ -78,4 +76,61 @@ nav {
     font-size: 20px;
     color: white;
     text-decoration: underline;
+}
+
+footer{
+    background-color: #333333;
+}
+
+.footer-heading {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-social li {
+    width: 20px;
+    display: inline;
+}
+
+
+@media only screen and (max-width: 600px) {
+    footer {
+        text-align: center;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
+    .header {
+        font-size: 33px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .banner {
+        height: 45vh;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .banner {
+        height: 45vh;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .footer-ul-margin {
+        margin-left: 37%;
+    }
+
+    .banner {
+        height: 60vh;
+    }
 }

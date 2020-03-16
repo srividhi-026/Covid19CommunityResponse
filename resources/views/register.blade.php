@@ -16,7 +16,7 @@
 
                 <div>
 
-                    <form method="POST" action="{{ url('') }}" class="needs-validation" novalidate>
+                    <form method="POST" action="{{ url('do_register') }}" class="needs-validation" novalidate>
 
                         @csrf
 

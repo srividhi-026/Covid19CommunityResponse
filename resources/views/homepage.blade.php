@@ -36,12 +36,11 @@
 
             <div class="col s12 m6 green-container">
 
-                <a href="https://discordapp.com/widget?id=687025366371663947&theme=dark" class="main-link">JOIN THE DISCUSSION</a>
+                <a href="https://discord.gg/Ej2HrDW" class="main-link">JOIN THE DISCUSSION</a>
 
             </div>
 
         </div>
-
 
     </div>
 

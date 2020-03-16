@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use GuzzleHttp\Psr7\Request;
 use Illuminate\View\View;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -37,5 +38,15 @@ class RegisterController extends Controller
      */
     public function show () {
         return view('register');
+    }
+
+    public function do_register (Request $request) {
+        $request->validate([
+            'agenda_id' => 'required|int',
+            'text'      => 'required|string',
+            'position'  => 'required|int'
+        ]);
+
+
     }
 }

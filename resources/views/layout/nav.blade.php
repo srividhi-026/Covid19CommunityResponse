@@ -2,15 +2,9 @@
 
     <div class="nav-wrapper">
 
-        <a id="logo-container" href="{{url('/')}}" class="" >
+        <a class="brand-logo" href="{{url('/')}}" >
 
             <img class="logo" src="{{url('img/logo.svg')}}" alt="Covid Community Response" />
-
-            <span class="logo-text">
-
-                Covid Community Response
-
-            </span>
 
         </a>
 
@@ -50,17 +44,24 @@
 
             <li>
 
-                <a href="#">
+                <a href="https://www.facebook.com/CCRIreland">
 
-                    <img src="" />
+                    <i class="icon fab fa-facebook"></i>
+
+                </a>
+
+            </li>
+
+            <li>
+                <a href="https://www.instagram.com/ccrireland">
+
+                    <i class="icon fab fa-instagram"></i>
 
                 </a>
 
             </li>
 
         </ul>
-
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
     </div>
 
