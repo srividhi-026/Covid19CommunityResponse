@@ -1,5 +1,6 @@
+@include('layout.header')
 
-<main role="main" class="auth-view">
+    <main role="main" class="auth-view">
 
         <div class="auth-form-container">
 
@@ -66,3 +67,5 @@
         </div>
 
     </main>
+
+@include('layout.footer')
