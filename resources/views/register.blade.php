@@ -76,7 +76,7 @@
 
                                 <i class="material-icons-outlined prefix">people_outline</i>
 
-                                <input id="last_name" name="last_name" type="text" value="{{ old('first_name') }}" >
+                                <input id="last_name" name="last_name" type="text" value="{{ old('last_name') }}" >
 
                                 <label for="last_name">Last Name</label>
 
@@ -90,7 +90,7 @@
 
                                 <i class="material-icons-outlined prefix">email</i>
 
-                                <input id="email" name="email" type="email" value="{{ old('first_name') }}">
+                                <input id="email" name="email" type="email" value="{{ old('email') }}">
 
                                 <label for="email">Email</label>
 
@@ -104,7 +104,7 @@
 
                                 <i class="material-icons-outlined prefix">phone</i>
 
-                                <input id="phone" name="phone" type="text" value="{{ old('first_name') }}" >
+                                <input id="phone" name="phone" type="text" value="{{ old('phone') }}" >
 
                                 <label for="phone">Phone</label>
 

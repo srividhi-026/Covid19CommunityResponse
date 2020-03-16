@@ -58,7 +58,7 @@ class RegisterController
         ]);
 
         if ($user) {
-            $request->flash('message', 'Thank you for registering and giving your support!');
+            Session::flash('message', 'Thank you for registering and giving your support!');
 
             $response = redirect('register');
         }
