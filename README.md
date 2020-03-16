@@ -1,4 +1,4 @@
-<p align="center">Covid Community Response</p>
+<p align="center">##Covid Community Response</p>
  
 The Covid Community Response Team was set up in an effort to help coordinate ongoing national & local community campaigns/efforts in the fight against Covid 19.
  
@@ -21,8 +21,8 @@ In practical terms, the low hanging fruit for the accrual of synergies is throug
 
 7. Go to .env file you created and replace the following: 
     
-    a. Default APP_URL to APP_URL=http://localhost/Covid19CommunityResponse/public/
-    b. Change your Database name in DB_DATABASE if you want to and create a new Databse with the same name in your phpmyadmin.
+    a. Default APP_URL to APP_URL=http://localhost/Covid19CommunityResponse/public/ <br>
+    b. Change your Database name in DB_DATABASE if you want to and create a new Databse with the same name in your phpmyadmin. <br>
     c. Set your DB_USERNAME and DB_PASSWORD
 
 8. To build npm run dev or npm run watch.
