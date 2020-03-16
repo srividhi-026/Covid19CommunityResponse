@@ -21,5 +21,5 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::post('do_register', '');
+//Route::post('do_register', '');
 
