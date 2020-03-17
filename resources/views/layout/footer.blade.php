@@ -10,23 +10,7 @@
 
                         <ul class="footer-ul-margin">
 
-                            <li><a class="white-text" href="#">About Us</a></li>
-
-                            <li><a class="white-text" href="#">COVID-19 Virus FAQ </a></li>
-
-                        </ul>
-
-                    </div>
-
-                    <div class="col s12 m4 footer-ul">
-
-                        <h5 class="white-text footer-heading footer-ul-margin">CONTACT</h5>
-
-                        <ul class="footer-ul-margin">
-
-                            <li><a class="white-text" href="#">Info@ccr.ie</a></li>
-
-                            <li><a class="white-text" href="#">+ XX XXX XXXX</a></li>
+                            <li><a class="white-text" href="https://www2.hse.ie/conditions/coronavirus/coronavirus.html">About Us</a></li>
 
                         </ul>
 
@@ -37,6 +21,16 @@
                         <h5 class="white-text footer-heading footer-ul-margin">STAY IN TOUCH</h5>
 
                         <ul class="footer-ul-margin footer-social">
+
+                            <li>
+
+                                <a href="https://discord.gg/Ej2HrDW">
+
+                                    <i class="icon2 fab fa-discord"></i> &nbsp;
+
+                                </a>
+
+                            </li>
 
                             <li>
 
@@ -65,6 +59,28 @@
                                 </a>
 
                             </li>
+
+                            <li>
+
+                                <a href="https://github.com/srividhi-026/Covid19CommunityResponse">
+
+                                <i class="icon2 fab fa-github"></i> &nbsp;
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="col s12 m4 footer-ul">
+
+                        <h5 class="white-text footer-heading footer-ul-margin">CONTACT</h5>
+
+                        <ul class="footer-ul-margin">
+
+                            <li><a class="white-text" href="mailto:info@covidcomunityresponse.ie">info@covidcomunityresponse.ie</a></li>
 
                         </ul>
 
