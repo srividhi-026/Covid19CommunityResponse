@@ -90,6 +90,7 @@ footer{
 .footer-copyright {
     text-align: center;
     padding: 10px;
+    font-size: 10px;
 }
 
 .footer-social li {
@@ -180,7 +181,7 @@ footer{
 
 @media only screen and (min-width: 1200px) {
     .footer-ul-margin {
-        margin-left: 37%;
+        margin-left: 30%;
     }
 
     .banner {

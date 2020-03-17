@@ -178,7 +178,7 @@
 
                                 <label>
 
-                                    <input name="driving" type="checkbox" class="filled-in" checked="checked" />
+                                    <input name="driving" type="checkbox" class="filled-in"/>
 
                                     <span>Access to Car?</span>
 
@@ -191,7 +191,7 @@
 
                                 <label>
 
-                                    <input name="over18" type="checkbox" class="filled-in" />
+                                    <input name="over18" type="checkbox" class="filled-in"/>
 
                                     <span> Are you over 18?</span>
 
@@ -208,7 +208,7 @@
 
                                 <label>
 
-                                    <input name="privacy_policy" type="checkbox" class="filled-in" />
+                                    <input name="privacy_policy" type="checkbox" class="filled-in"/>
 
                                     <span> Agree our Privacy Policy. Read
 
@@ -248,7 +248,7 @@
 
                                 <label>
 
-                                    <input name="contact_email" type="checkbox" class="filled-in" checked="checked"/>
+                                    <input name="contact_email" type="checkbox" class="filled-in"/>
 
                                     <span> Can we contact you by email </span>
 

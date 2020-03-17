@@ -1,98 +1,96 @@
         <footer class="">
 
-            <div class="">
+            <div class="row">
 
-                <div class="row">
+                <div class="col s12 m4">
 
-                    <div class="col s12 m4">
+                    <h5 class="white-text footer-heading footer-ul-margin">About Us</h5>
 
-                        <ul class="footer-ul-margin">
+                    <ul class="footer-ul-margin">
 
-                            <li>
-                                <a class="white-text" href="https://www2.hse.ie/conditions/coronavirus/coronavirus.html">
-                                    About Us
-                                </a>
-                            </li>
+                        <li>
+                            <a class="white-text" href="https://www2.hse.ie/conditions/coronavirus/coronavirus.html" target="_blank">
+                                Official Information
+                            </a>
+                        </li>
 
-                            <li>
-                                <a class="white-text" href="{{url('privacy_policy')}}" target="_blank">
-                                    Privacy Policy
-                                </a>
-                            </li>
+                        <li>
+                            <a class="white-text" href="{{url('privacy_policy')}}" target="_blank">
+                                Privacy Policy
+                            </a>
+                        </li>
 
-                        </ul>
+                    </ul>
 
-                    </div>
+                </div>
 
-                    <div class="col s12 m4">
+                <div class="col s12 m4">
 
-                        <h5 class="white-text footer-heading footer-ul-margin">STAY IN TOUCH</h5>
+                    <h5 class="white-text footer-heading footer-ul-margin">STAY IN TOUCH</h5>
 
-                        <ul class="footer-ul-margin footer-social">
+                    <ul class="footer-ul-margin footer-social">
 
-                            <li>
+                        <li>
 
-                                <a href="https://discord.gg/Ej2HrDW">
+                            <a href="https://discord.gg/Ej2HrDW" target="_blank">
 
-                                    <i class="icon2 fab fa-discord"></i> &nbsp;
+                                <i class="icon2 fab fa-discord"></i> &nbsp;
 
-                                </a>
+                            </a>
 
-                            </li>
+                        </li>
 
-                            <li>
+                        <li>
 
-                                <a href="https://www.facebook.com/CCRIreland">
+                            <a href="https://www.facebook.com/CCRIreland" target="_blank">
 
-                                    <i class="icon2 fab fa-facebook"></i> &nbsp;
+                                <i class="icon2 fab fa-facebook"></i> &nbsp;
 
-                                </a>
+                            </a>
 
-                            </li>
+                        </li>
 
-                            <li>
-                                <a href="https://www.instagram.com/ccrireland">
+                        <li>
+                            <a href="https://www.instagram.com/ccrireland" target="_blank">
 
-                                    <i class="icon2 fab fa-instagram"></i> &nbsp;
+                                <i class="icon2 fab fa-instagram"></i> &nbsp;
 
-                                </a>
+                            </a>
 
-                            </li>
+                        </li>
 
-                            <li>
-                                <a href="https://twitter.com/CCRIreland">
+                        <li>
+                            <a href="https://twitter.com/CCRIreland" target="_blank">
 
-                                    <i class="icon2 fab fa-twitter"></i> &nbsp;
+                                <i class="icon2 fab fa-twitter"></i> &nbsp;
 
-                                </a>
+                            </a>
 
-                            </li>
+                        </li>
 
-                            <li>
+                        <li>
 
-                                <a href="https://github.com/srividhi-026/Covid19CommunityResponse">
+                            <a href="https://github.com/srividhi-026/Covid19CommunityResponse" target="_blank">
 
-                                <i class="icon2 fab fa-github"></i> &nbsp;
+                            <i class="icon2 fab fa-github"></i> &nbsp;
 
-                                </a>
+                            </a>
 
-                            </li>
+                        </li>
 
-                        </ul>
+                    </ul>
 
-                    </div>
+                </div>
 
-                    <div class="col s12 m4 footer-ul">
+                <div class="col s12 m4 footer-ul">
 
-                        <h5 class="white-text footer-heading footer-ul-margin">CONTACT</h5>
+                    <h5 class="white-text footer-heading footer-ul-margin">CONTACT</h5>
 
-                        <ul class="footer-ul-margin">
+                    <ul class="footer-ul-margin">
 
-                            <li><a class="white-text" href="mailto:info@covidcomunityresponse.ie">info@covidcomunityresponse.ie</a></li>
+                        <li><a class="white-text" href="mailto:info@covidcomunityresponse.ie">info@covidcomunityresponse.ie</a></li>
 
-                        </ul>
-
-                    </div>
+                    </ul>
 
                 </div>
 
@@ -100,7 +98,8 @@
 
             <div class="white-text footer-copyright">
 
-                &copy CovidCommunityResponse {{ now()->year }} &nbsp; | &nbsp; All Rights Reserved
+            &nbsp;
+            &nbsp; &copy CovidCommunityResponse {{ now()->year }} &nbsp;
 
             </div>
 

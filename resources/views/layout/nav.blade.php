@@ -12,14 +12,14 @@
 
             <li>
 
-                <a href="{{ url('map') }}">
+                <a href="{{ url('map') }}" target="_blank">
 
                     <i class="icon fas fa-map-marked-alt"></i>
 
                 </a>
 
             </li>
-
+<!--
             <li>
 
                 <a href="https://www.facebook.com/CCRIreland">
@@ -46,7 +46,7 @@
 
                 </a>
 
-            </li>
+            </li> -->
 
         </ul>
 
