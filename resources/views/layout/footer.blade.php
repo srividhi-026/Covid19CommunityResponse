@@ -6,11 +6,19 @@
 
                     <div class="col s12 m4">
 
-                        <h5 class="white-text footer-heading footer-ul-margin">FAQ</h5>
-
                         <ul class="footer-ul-margin">
 
-                            <li><a class="white-text" href="https://www2.hse.ie/conditions/coronavirus/coronavirus.html">About Us</a></li>
+                            <li>
+                                <a class="white-text" href="https://www2.hse.ie/conditions/coronavirus/coronavirus.html">
+                                    About Us
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="white-text" href="{{url('privacy_policy')}}" target="_blank">
+                                    Privacy Policy
+                                </a>
+                            </li>
 
                         </ul>
 

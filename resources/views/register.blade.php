@@ -174,9 +174,7 @@
 
                             </div>
 
-                            <div class="input-field col s12 checkbox">
-
-                                <i class="material-icons-outlined prefix">directions_car</i>
+                            <div class="input-field col s12 ">
 
                                 <label>
 
@@ -185,14 +183,82 @@
                                     <span>Access to Car?</span>
 
                                 </label>
+                                <br>
 
-                                @if ($errors->has('driving'))
-                                    <p class="error">{{ $errors->first('driving') }}</p>
+                            </div>
+
+                            <div class="input-field col s12">
+
+                                <label>
+
+                                    <input name="over18" type="checkbox" class="filled-in" />
+
+                                    <span> Are you over 18?</span>
+
+                                </label>
+
+                                <br>
+                                @if ($errors->has('over18'))
+                                    <p class="error">{{ $errors->first('over18') }}</p>
                                 @endif
 
                             </div>
 
+                            <div class="input-field col s12">
+
+                                <label>
+
+                                    <input name="privacy_policy" type="checkbox" class="filled-in" />
+
+                                    <span> Agree our Privacy Policy. Read
+
+                                        <a href="{{url('privacy_policy')}}" target="_blank">
+                                            here
+                                        </a>
+
+                                    </span>
+
+                                </label>
+                                <br>
+
+                                @if ($errors->has('privacy_policy'))
+                                    <p class="error">{{ $errors->first('privacy_policy') }}</p>
+                                @endif
+
+                            </div>
+
+                            <div class="input-field col s12">
+
+                                <label>
+
+                                    <input name="confidentiality" type="checkbox" class="filled-in" />
+
+                                    <span> Confidentitality Agreement. Read <a href="{{url('confidentiality')}}" target="_blank"> here </a></span>
+
+                                </label>
+
+                                <br>
+                                @if ($errors->has('confidentiality'))
+                                    <p class="error">{{ $errors->first('confidentiality') }}</p>
+                                @endif
+
+                            </div>
+
+                            <div class="input-field col s12">
+
+                                <label>
+
+                                    <input name="contact_email" type="checkbox" class="filled-in" checked="checked"/>
+
+                                    <span> Can we contact you by email </span>
+
+                                </label>
+
+                            </div>
+
                         </div>
+
+                        <br>
 
                         <div class="row center">
 

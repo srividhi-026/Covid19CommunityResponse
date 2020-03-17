@@ -40,21 +40,24 @@ class RegisterController
 
     public function do_register (Request $request) {
         $request->validate([
-            'first_name' => 'required|string',
-            'last_name'  => 'required|string',
-            'email'      => 'required|email|unique:users',
-            'phone'      => 'required',
-            'county'     => 'required|string',
-            'driving'    => 'required',
+            'first_name'     => 'required|string',
+            'last_name'      => 'required|string',
+            'email'          => 'required|email|unique:users',
+            'phone'          => 'required',
+            'county'         => 'required|string',
+            'over18'         => 'required',
+            'privacy_policy' => 'required',
+            'confidentiality'=> 'required'
         ]);
 
         $user = User::create([
-            'first_name' => $request->first_name,
-            'last_name'  => $request->last_name,
-            'email'      => $request->email,
-            'phone'      => $request->phone,
-            'county'     => $request->county,
-            'driving'    => $request->driving == 'on' ? 1 : 0
+            'first_name'    => $request->first_name,
+            'last_name'     => $request->last_name,
+            'email'         => $request->email,
+            'phone'         => $request->phone,
+            'county'        => $request->county,
+            'driving'       => $request->driving == 'on' ? 1 : 0,
+            'contact_email' => $request->contact_email == 'on' ? 1 : 0
         ]);
 
         if ($user) {
