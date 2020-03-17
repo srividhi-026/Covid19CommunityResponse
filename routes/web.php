@@ -21,5 +21,10 @@ Route::get('/register', function () {
     return view('register');
 });
 
+Route::get('/map', function () {
+    return view('map');
+});
+
 Route::post('do_register', 'RegisterController@do_register');
+
 

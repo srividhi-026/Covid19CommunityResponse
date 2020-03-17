@@ -12,6 +12,16 @@
 
             <li>
 
+                <a href="{{ url('map') }}">
+
+                    <i class="icon fas fa-map-marked-alt"></i>
+
+                </a>
+
+            </li>
+
+            <li>
+
                 <a href="https://www.facebook.com/CCRIreland">
 
                     <i class="icon fab fa-facebook"></i>
