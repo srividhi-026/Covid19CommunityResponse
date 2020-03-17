@@ -12,6 +12,16 @@
 
             <li>
 
+                <a href="{{url('about')}}" target="_blank" class="about">
+
+                    About
+
+                </a>
+
+            </li>
+
+            <li>
+
                 <a href="{{ url('map') }}" target="_blank">
 
                     <i class="icon fas fa-map-marked-alt"></i>
@@ -20,16 +30,6 @@
 
             </li>
 <!--
-            <li>
-
-                <a href="https://www.facebook.com/CCRIreland">
-
-                    <i class="icon fab fa-facebook"></i>
-
-                </a>
-
-            </li>
-
             <li>
                 <a href="https://www.instagram.com/ccrireland">
 

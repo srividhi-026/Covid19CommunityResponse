@@ -29,4 +29,4 @@ Route::post('do_register', 'RegisterController@do_register');
 
 Route::view('/privacy_policy', 'policies/privacy_policy');
 Route::view('/confidentiality', 'policies/confidentiality');
-
+Route::view('/about', 'policies/about');
