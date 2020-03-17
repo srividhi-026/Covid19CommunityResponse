@@ -12,7 +12,6 @@ Unless acting on the instructions of an authorised person within the group, on n
 <p>Computer screens must always be cleared when left unattended and you must ensure you log out of computer systems.</p>
 <p>Confidential or sensitive information relating to an individual may be divulged where there is a risk of danger to the individual, a volunteer, or the public at large, or where it is against the law to withhold it. In these circumstances, information may be divulged to external agencies e.g. police or social services on a need to know basis.</p>
 
-<p>I have read, understand and agree to the terms and conditions set out above.</p>
 </div>
 
 @include('layout.footer')
