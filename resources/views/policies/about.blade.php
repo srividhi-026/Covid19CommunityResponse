@@ -1,4 +1,5 @@
 @include('layout.header')
+<h3 class="text-center">About us</h3>
 <div class="container">
 <p><b>
 Covid Community Response aims to bring communities together, collaborating and supporting those most in need during the Covid-19 outbreak in Ireland.
