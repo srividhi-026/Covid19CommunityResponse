@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+@include('layout.header')
 
-<head>
-
-    <?php
+<?php
     $lat=53.3338;
     $lon=-6.2488;
     //This use of base href needs to refer to a website with an active MediaWiki installation for the map to load. I haven't worked out why. ?>
@@ -28,9 +25,7 @@
     <link rel="stylesheet" href="https://randall.ie/wiki/extensions/Maps/resources/lib/leaflet/leaflet.css"/>
     <script src="https://randall.ie/wiki/extensions/Maps/resources/lib/leaflet/leaflet.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-</head>
 
-<body>
     <?php
     // The map code.
     // Apologies for the ugliness - I understand that line breaks can cause issues.
@@ -41,11 +36,11 @@
     // There is access to alternative services to OpenStreetMap: basically the entire OpenLayers library.
     // Note that the location of the marker has been given a relative file path. It would need the full URL, or else the base href would cause issues. ?>
 
-    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+    <div style="height: 90vh" id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
 
-        <div class="mw-parser-output">
+        <div class="mw-parser-output" style="margin-top: 20px">
 
-            <div id="map_leaflet_1" style="max-width:70em; margin-bottom:1em !important;height: 350px!important; background-color: #eeeeee; overflow: hidden;" class="maps-map maps-leaflet">
+            <div id="map_leaflet_1" style="max-width:70em; margin-bottom:1em !important;height: 500px!important; background-color: #eeeeee; overflow: hidden;" class="maps-map maps-leaflet">
 
                 <div class="maps-loading-message">Loading map...</div>
 
@@ -57,6 +52,4 @@
 
     </div>
 
-</body>
-
-</html>
+@include('layout.footer')
