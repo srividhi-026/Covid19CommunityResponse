@@ -60,6 +60,39 @@ class RegisterController
         if ($user) {
             Session::flash('message', 'Thank you for registering and giving your support!');
 
+            // send acknowledgement to registered users.
+            $email_data = array(
+                template_item('user', $user->first_name),
+            );
+
+            $email_details = array(
+                'subject'       => 'Thanks for signing up',
+                'from_email'    => 'info@covidcommunityresponse.ie',
+                'from_name'     => '',
+                'to_email'      => $user->email,
+                'template_name' => 'ccr_register',
+                'template_data' => $email_data,
+            );
+
+            send_mandrill_email($email_details);
+
+            // send notification to CCR-19 team
+            $email_data = array(
+                template_item('user', $user->first_name. ' '. $user->last_name),
+                template_item('location', $user->county)
+            );
+
+            $email_details = array(
+                'subject'       => 'New user registration',
+                'from_email'    => 'info@covidcommunityresponse.ie',
+                'from_name'     => 'CCR-19',
+                'to_email'      => 'info@covidcommunityresponse.ie',
+                'template_name' => 'ccr_register_notify',
+                'template_data' => $email_data,
+            );
+
+            send_mandrill_email($email_details);
+
             $response = redirect('register');
         }
         else {
