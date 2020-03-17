@@ -82,7 +82,7 @@
 
                 </div>
 
-                <div class="col s12 m4 footer-ul">
+                <div class="col s12 m4">
 
                     <h5 class="white-text footer-heading footer-ul-margin">CONTACT</h5>
 
@@ -97,9 +97,7 @@
             </div>
 
             <div class="white-text footer-copyright">
-
-            &nbsp;
-            &nbsp; &copy CovidCommunityResponse {{ now()->year }} &nbsp;
+                &copy CovidCommunityResponse {{ now()->year }}
 
             </div>
 
