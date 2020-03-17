@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->tinyInteger('driving');
             $table->string('county', 100);
+            $table->tinyInteger('contact_email');
             //$table->rememberToken();
             $table->timestamps();
         });
