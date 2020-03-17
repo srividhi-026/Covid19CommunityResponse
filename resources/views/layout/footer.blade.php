@@ -92,7 +92,7 @@
 
             <div class="white-text footer-copyright">
 
-                <p>covidcommunityresponse.ie</p>
+                &copy CovidCommunityResponse {{ now()->year }} &nbsp; | &nbsp; All Rights Reserved
 
             </div>
 
