@@ -1,0 +1,189 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+.main-wrapper {
+    padding: 0;
+}
+
+nav {
+    color: grey!important;
+    height: 90px!important;
+}
+
+.logo {
+    height: 80px;
+    margin: 10px;
+}
+
+.banner {
+    height: 60vh;
+}
+
+.links {
+    height: 20vh;
+}
+
+.icon {
+    margin-top: 12px;
+    font-size: 40px;
+    color: #363636;
+}
+
+.icon2 {
+    margin-top: 12px;
+    font-size: 40px;
+    color: #FFF;
+}
+
+.green-font {
+    color: #129b63;
+}
+
+.orange-font {
+    color: #f68841;
+}
+
+.header {
+    font-size: 30px;
+    color: grey;
+}
+
+.banner-text {
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+.green-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    background-color: #129b63;
+}
+
+.orange-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    background-color: #f68841;
+}
+
+.main-link {
+    font-size: 20px;
+    color: white;
+    text-decoration: underline;
+}
+
+footer{
+    background-color: #333333;
+}
+
+.footer-heading {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-social li {
+    width: 20px;
+    display: inline;
+}
+
+.auth-form-container {
+    width: 100%;
+    min-height: 92.8vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.auth-form {
+    width: 400px;
+    padding:12px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.text-center{
+    text-align: center;
+}
+
+.checkbox {
+    height: 30px;
+}
+
+.notification-icon {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.notification {
+    padding: 15px !important;
+    display: flex;
+    align-self: center;
+
+}
+
+.notification span {
+    margin-top: 13px;
+    margin-left: 20px;
+    width: 100%;
+}
+
+.error{
+    color: red;
+}
+
+@media only screen and (max-width: 600px) {
+    footer {
+        text-align: center;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
+    .header {
+        font-size: 33px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .banner {
+        height: 45vh;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .banner {
+        height: 45vh;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .footer-ul-margin {
+        margin-left: 37%;
+    }
+
+    .banner {
+        height: 60vh;
+    }
+}
