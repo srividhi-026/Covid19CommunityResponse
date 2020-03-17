@@ -20,7 +20,7 @@
     <?php
     // These files ned to be included for the map to work. Note that the first one refers to a MediaWiki installation.
     // Note that some relative file paths have been given. These would need to be the full URL, or else the base href would cause issues. ?>
-    <link rel="stylesheet" href="https://randall.ie/help/style.css.php">
+{{--    <link rel="stylesheet" href="https://randall.ie/help/style.css.php">--}}
     <script async="" src="https://motorwayservices.ie/wiki/load.php?debug=false&lang=en&modules=startup&only=scripts&skin=vector"></script>
     <link rel="stylesheet" href="https://randall.ie/wiki/extensions/Maps/resources/lib/leaflet/leaflet.css"/>
     <script src="https://randall.ie/wiki/extensions/Maps/resources/lib/leaflet/leaflet.js"></script>
@@ -38,9 +38,9 @@
 
     <div style="height: 90vh" id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
 
-        <div class="mw-parser-output" style="margin-top: 20px">
+        <div class="mw-parser-output" style="margin-top: 20px;padding-left: 50px;padding-right: 50px">
 
-            <div id="map_leaflet_1" style="max-width:70em; margin-bottom:1em !important;height: 500px!important; background-color: #eeeeee; overflow: hidden;" class="maps-map maps-leaflet">
+            <div id="map_leaflet_1" style=" margin-bottom:1em !important;height: 700px!important; background-color: #eeeeee; overflow: hidden;" class="maps-map maps-leaflet">
 
                 <div class="maps-loading-message">Loading map...</div>
 
