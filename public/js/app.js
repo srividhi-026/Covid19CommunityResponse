@@ -19286,6 +19286,17 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Auto I
 
 M.AutoInit();
 
+function getLocation() {
+  if (navigator.geolocation) {
+    var position = navigator.geolocation.getCurrentPosition(showPosition);
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+    alert('lat:' + lat + '    ' + 'lng:' + lng);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -19338,8 +19349,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\Covid19CommunityResponse\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\Covid19CommunityResponse\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /usr/local/var/www/Covid19CommunityResponse/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /usr/local/var/www/Covid19CommunityResponse/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

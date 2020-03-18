@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-
-;
+use Faker\Factory as Faker;
 
 class RegisterController
 {
@@ -44,6 +43,8 @@ class RegisterController
             'last_name'      => 'required|string',
             'email'          => 'required|email|unique:users',
             'phone'          => 'required',
+            'lat'            => 'required',
+            'lng'            => 'required',
             'county'         => 'required|string',
             'over18'         => 'required',
             'privacy_policy' => 'required',
@@ -55,6 +56,9 @@ class RegisterController
             'last_name'     => $request->last_name,
             'email'         => $request->email,
             'phone'         => $request->phone,
+            'lat'           => $request->lat,
+            'lng'           => $request->lng,
+            'status'        => 1,
             'county'        => $request->county,
             'driving'       => $request->driving == 'on' ? 1 : 0,
             'contact_email' => $request->contact_email == 'on' ? 1 : 0
@@ -105,5 +109,68 @@ class RegisterController
         }
 
         return $response;
+    }
+
+    public function get_map_data (Request $request) {
+//  Create fake points.
+//        $faker = Faker::create();
+//        $faker->seed(mt_rand(0, 1000000));
+//
+
+//        for($i = 0; $i < 10000; $i++) {
+//            User::create([
+//
+//                    'first_name'    => $faker->name,
+//                    'last_name'     => $faker->name,
+//                    'email'         => $faker->email,
+//                    'phone'         => $faker->phoneNumber,
+//                    'lat'           => $faker->latitude,
+//                    'lng'           => $faker->longitude,
+//                    'status'        => 1,
+//                    'county'        => $faker->country,
+//                    'driving'       => 1,
+//                    'contact_email' => 1
+//
+//            ]);
+//        }
+
+        $users = User::all();
+
+        $map_data = '{"type": "FeatureCollection","crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                      "features": [';
+
+        $count = count($users);
+        $counter = 1;
+
+        foreach ($users as $user) {
+            $driving = $user->driving == 1 ? 'Yes' : 'No';
+            $status = $user->status == 1 ? 'I\'m in need of help!' : 'I\'m offering my help' ;
+
+            $map_data .= '{"type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [ ' . $user->lng . ', ' . $user->lat . ', 0.0 ]
+                         },
+                         "properties": {
+                                "id": ' . $user->id . ',
+                                "mag": 2.3,
+                                "phone": "' . $user->phone . '",
+                                "name": "' . $user->first_name . ' ' . $user->last_name . '",
+                                "driving": "' . $driving . '",
+                                "status": "' . $status . '"
+                            }
+                      }';
+
+            if ($count != $counter) {
+                $map_data .= ',';
+            }
+
+            $counter++;
+        }
+
+        $map_data .= ']}';
+
+        return $map_data;
+
     }
 }

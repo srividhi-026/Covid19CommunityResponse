@@ -100,6 +100,42 @@
 
                             </div>
 
+                            <div class="input-field col s6">
+
+                                <i class="material-icons-outlined prefix">place</i>
+
+                                <input id="lat" name="lat" type="text" value="{{ old('lat') }}">
+
+                                <label id="lat-label" for="lat">Latitude</label>
+
+                                @if ($errors->has('lat'))
+                                    <p class="error">{{ $errors->first('lat') }}</p>
+                                @endif
+
+                            </div>
+
+                            <div class="input-field col s6">
+
+                                <i class="material-icons-outlined prefix">place</i>
+
+                                <input id="lng" name="lng" type="text" value="{{ old('lng') }}">
+
+                                <label id="lng-label" for="lng">Longitude</label>
+
+                                @if ($errors->has('lng'))
+
+                                    <p class="error">{{ $errors->first('lng') }}</p>
+
+                                @endif
+
+                            </div>
+
+                            <div class="col s12 center">
+
+                                <a class="btn" onclick="getLocation()">Find My Location</a>
+
+                            </div>
+
                             <div class="input-field col s12">
 
                                 <i class="material-icons-outlined prefix">phone</i>
@@ -281,5 +317,24 @@
         </div>
 
     </main>
+
+    <script>
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            document.getElementById('lat').value = position.coords.latitude;
+            document.getElementById('lng').value = position.coords.longitude;
+
+            document.getElementById('lat-label').classList.add("active");
+            document.getElementById('lng-label').classList.add("active");
+        }
+    </script>
 
 @include('layout.footer')

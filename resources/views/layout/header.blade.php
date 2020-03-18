@@ -21,6 +21,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
 
+        <script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
+        <link href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet" />
+
         <link rel="stylesheet" href="{{url('css/app.css')}}">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -32,7 +35,6 @@
 
             gtag('config', 'UA-160803470-1');
         </script>
-
 
     </head>
 

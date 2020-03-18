@@ -12,7 +12,7 @@
 
             <li>
 
-                <a href="{{url('about')}}" target="_blank" class="about">
+                <a href="{{url('about')}}" class="about">
 
                     About
 
@@ -22,9 +22,9 @@
 
             <li>
 
-                <a href="{{ url('map') }}" target="_blank">
+                <a href="{{ url('map') }}" class="about">
 
-                    <i class="icon fas fa-map-marked-alt"></i>
+                    Map
 
                 </a>
 
