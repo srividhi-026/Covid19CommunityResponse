@@ -8,25 +8,27 @@ Covid Community Response aims to bring communities together, collaborating and s
 The Covid Community Response team was set up in an effort to help coordinate ongoing national & local community initiatives in the fight against Covid-19, standardising communication and campaigns, as well as sharing resources.
 </p>
 <p class="para">
-Our project is an open source build which will give others in the community the opportunity to continue to grow our build, and integrate projects they are currently working on. The key to this project is that we get every group working threw one system. 
+Our project is an open source build which will give others in the community the opportunity to continue to grow our build, and integrate projects they are currently working on. The key to this project is that we get every group working through one system.
 </p>
-<h5>
-Campaigns</h5>
+<h5><b>
+Campaigns</b></h5>
 <p class="para">
 In these uncertain times it is fantastic to see so many members of our society pull together and launch various campaigns to tackle this challenge head on. The energy, creativity and passion which is on display is most certainly our silver lining. There are many campaigns currently underway with the most prevalent, overarching theme being to help people who are in isolation.
 </p>
 <p class="para">
 
-Standardising campaigns will allow community leaders to ‘rinse & repeat’ campaigns and campaign materials. CCR’s website will give people an opportunity to register as volunteers, giving access to support from a network of individuals working together within the communities. CCR’s fundraiser will see all proceeds going towards direct costs, including food, sanitary products, and supplies needed by those most affected by Covid-19. 
+Standardising campaigns will allow community leaders to ‘rinse & repeat’ campaigns and campaign materials. CCR’s website will give people an opportunity to register as volunteers, giving access to support from a network of individuals working together within the communities. CCR’s fundraiser will see all proceeds going towards direct costs, including food, sanitary products, and supplies needed by those most affected by Covid-19.
 </p>
 <p class="para">
 CCR are working closely with organisations who are currently operating in the community but, due to extreme pressures, need more support at this time.
 </p>
 </div>
 
-   <!-- compiled and minified JavaScript -->
+   <!-- compiled and minified JavaScript
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <!-- font awesome icons -->
-<script defer src="https://kit.fontawesome.com/c94020147f.js" crossorigin="anonymous"></script>
-<script defer src="{{ url('js/app.js') }}"></script>
+<!-- <script defer src="https://kit.fontawesome.com/c94020147f.js" crossorigin="anonymous"></script>
+<script defer src="{{ url('js/app.js') }}"></script> -->
+
+@include('layout.footer')
