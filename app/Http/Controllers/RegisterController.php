@@ -144,7 +144,7 @@ class RegisterController
 
         foreach ($users as $user) {
             $driving = $user->driving == 1 ? 'Yes' : 'No';
-            $status = $user->status == 1 ? 'I\'m in need of help!' : 'I\'m offering my help' ;
+            $status = $user->status == 0 ? 'I\'m in need of help!' : 'I\'m offering my help' ;
 
             $map_data .= '{"type": "Feature",
                         "geometry": {
