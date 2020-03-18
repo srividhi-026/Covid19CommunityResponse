@@ -159,7 +159,7 @@ class RegisterController
                                 "id": ' . $user->id . ',
                                 "mag": 2.3,
                                 "phone": "' . $user->phone . '",
-                                "name": "' . $user->first_name . ' ' . $user->last_name . '",
+                                "name": "' . $user->first_name . '",
                                 "driving": "' . $driving . '",
                                 "status": "' . $status . '"
                             }
