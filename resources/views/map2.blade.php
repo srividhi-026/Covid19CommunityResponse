@@ -152,19 +152,19 @@
                                          "<strong>Status: </strong>" + status + "</br>")
                                 .addTo(map);
                         });
-
-                        // add markers to map
-                        geojson.features.forEach(function(marker) {
-
-                            // create a HTML element for each feature
-                            var el = document.createElement('div');
-                            el.className = 'marker';
-
-                            // make a marker for each feature and add to the map
-                            new mapboxgl.Marker(el)
-                                .setLngLat(marker.geometry.coordinates)
-                                .addTo(map);
-                        });
+                        //
+                        // // add markers to map
+                        // geojson.features.forEach(function(marker) {
+                        //
+                        //     // create a HTML element for each feature
+                        //     var el = document.createElement('div');
+                        //     el.className = 'marker';
+                        //
+                        //     // make a marker for each feature and add to the map
+                        //     new mapboxgl.Marker(el)
+                        //         .setLngLat(marker.geometry.coordinates)
+                        //         .addTo(map);
+                        // });
 
                         map.on('mouseenter', 'clusters', function() {
                             map.getCanvas().style.cursor = 'pointer';
