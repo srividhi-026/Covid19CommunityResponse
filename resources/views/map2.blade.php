@@ -176,7 +176,7 @@
 
                     async function getUsersData () {
                         // Performing a GET request
-                        return axios.get('http://localhost/Covid19CommunityResponse/public/get_map_data');
+                        return axios.get('https://https://covidcommunityresponse.ie/get_map_data');
                     }
 
                 </script>
