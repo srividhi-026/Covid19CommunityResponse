@@ -8,19 +8,6 @@
 
                 <div id='map' style=' height: 700px;'></div>
 
-                <style>
-
-                    .marker {
-                        background-image: url({{url('img/map_icon.png')}});
-                        background-size: cover;
-                        width: 50px;
-                        height: 50px;
-                        border-radius: 50%;
-                        cursor: pointer;
-                    }
-
-                </style>
-
                 <script>
                     mapboxgl.accessToken = 'pk.eyJ1IjoiY3J5cHRva25pZ2h0IiwiYSI6ImNrN3c3emtyNTAwMnUza203ajkxdnltbnEifQ.cIJgx9Rz3A-uOJ1zsWtdQg';
                     var map = new mapboxgl.Map({
@@ -28,7 +15,7 @@
                         style: 'mapbox://styles/mapbox/dark-v10',
                         center: [-6.2488 , 53.3338],
 
-                        zoom: 4
+                        zoom: 6
                     });
 
                     map.on('load', async function() {
@@ -176,7 +163,7 @@
 
                     async function getUsersData () {
                         // Performing a GET request
-                        return axios.get('https://covidcommunityresponse.ie/get_map_data');
+                        return axios.get('http://localhost/Covid19CommunityResponse/public/get_map_data');
                     }
 
                 </script>
