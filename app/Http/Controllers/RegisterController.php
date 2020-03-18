@@ -93,7 +93,7 @@ class RegisterController
                 'subject'       => 'New user registration',
                 'from_email'    => 'info@covidcommunityresponse.ie',
                 'from_name'     => 'CCR-19',
-                'to_email'      => 'info@covidcommunityresponse.ie',
+                'to_email'      => 'covid19ire@gmail.com',
                 'template_name' => 'ccr_register_notify',
                 'template_data' => $email_data,
             );
