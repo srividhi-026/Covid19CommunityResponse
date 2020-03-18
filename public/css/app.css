@@ -12,10 +12,13 @@ nav {
     height: 90px!important;
 }
 
+nav .sidenav-trigger {
+    float: right !important;
+}
+
 .logo {
     height: 80px;
     margin: 10px;
-    margin-left:25px;
 }
 
 .banner {
