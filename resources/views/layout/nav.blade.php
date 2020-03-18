@@ -8,7 +8,13 @@
 
         </a>
 
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+
+            <i class="material-icons about">menu</i>
+
+        </a>
+
+        <ul class="right hide-on-med-and-down">
 
             <li>
 
@@ -29,50 +35,33 @@
                 </a>
 
             </li>
-<!--
-            <li>
-                <a href="https://www.instagram.com/ccrireland">
-
-                    <i class="icon fab fa-instagram"></i>
-
-                </a>
-
-            </li>
-
-            <li>
-                <a href="https://twitter.com/CCRIreland">
-
-                    <i class="icon fab fa-twitter"></i>
-
-                </a>
-
-            </li> -->
-
-        </ul>
-
-        <ul id="nav-mobile" class="sidenav">
-
-            <li>
-
-                <a href="https://www.facebook.com/CCRIreland">
-
-                    <i class="icon fab fa-facebook"></i>
-
-                </a>
-
-            </li>
-
-            <li>
-                <a href="https://www.instagram.com/ccrireland">
-
-                    <i class="icon fab fa-instagram"></i>
-
-                </a>
-
-            </li>
 
         </ul>
 
     </div>
 
 </nav>
+
+<ul class="sidenav" id="mobile-demo">
+
+    <li>
+
+        <a href="{{url('about')}}" class="about">
+
+            About
+
+        </a>
+
+    </li>
+
+    <li>
+
+        <a href="{{ url('map') }}" class="about">
+
+            Map
+
+        </a>
+
+    </li>
+
+</ul>
