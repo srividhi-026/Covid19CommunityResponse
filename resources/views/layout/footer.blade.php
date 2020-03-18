@@ -88,7 +88,7 @@
 
                     <ul class="footer-ul-margin">
 
-                        <li><a class="white-text" href="mailto:info@communityresponse.ie">info@communityresponse.ie</a></li>
+                        <li><a class="white-text" href="mailto:info@covidcommunityresponse.ie">info@covidcommunityresponse.ie</a></li>
 
                     </ul>
 
