@@ -116,7 +116,7 @@ class RegisterController
 //        $faker = Faker::create();
 //        $faker->seed(mt_rand(0, 1000000));
 //
-
+//
 //        for($i = 0; $i < 10000; $i++) {
 //            User::create([
 //
@@ -146,7 +146,11 @@ class RegisterController
             $driving = $user->driving == 1 ? 'Yes' : 'No';
             $status = $user->status == 0 ? 'I\'m in need of help!' : 'I\'m offering my help' ;
 
-            $map_data .= '{"type": "Feature",
+
+            // weed out any users with invalid lat lng coords.
+            if(is_numeric($user->lat) && is_numeric($user->lng)) {
+
+                $map_data .= '{"type": "Feature",
                         "geometry": {
                             "type": "Point",
                             "coordinates": [ ' . $user->lng . ', ' . $user->lat . ', 0.0 ]
@@ -161,8 +165,9 @@ class RegisterController
                             }
                       }';
 
-            if ($count != $counter) {
-                $map_data .= ',';
+                if ($count != $counter) {
+                    $map_data .= ',';
+                }
             }
 
             $counter++;
