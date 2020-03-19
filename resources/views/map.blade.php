@@ -1,50 +1,193 @@
 @include('layout.header')
 
-<?php
-    $lat=53.3338;
-    $lon=-6.2488;
-    //This use of base href needs to refer to a website with an active MediaWiki installation for the map to load. I haven't worked out why. ?>
-    <base href="https://motorwayservices.ie/" />
+    <div class="container-fluid">
 
-    <?php
-    //This code is written by MediaWiki and needs to be included for the map to load. I haven't been able to pull apart exactly which parts are required.
-    // The part "Maps/" should refer to the exact file path to that directory. ?>
+        @if(session()->has('message'))
 
-    <script>
-        (window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgWikiEditorEnabledModules":[],"egMapsScriptPath":"Maps/","egMapsDebugJS":false,"egMapsAvailableServices":["leaflet","googlemaps3"],"egMapsLeafletLayersApiKeys":{"MapBox":"","MapQuestOpen":"","Thunderforest":"","GeoportailFrance":""},"egMapsLeafletLayersDark":["CartoDB.DarkMatter"]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready"});mw.loader.implement("user.options@032mizr",function($,jQuery,require,module){/*@nomin*/mw.user.options.set({"disablemail":"1","enotifusertalkpages":"","enotifwatchlistpages":"","watchcreations":"","watchdefault":"","timecorrection":"System|","rcfilters-limit":"500","rcfilters-rc-collapsed":0,"rcfilters-saved-queries":"{\"queries\":{},\"version\":\"2\"}","watchlisttoken":"2a4bee34a92355c53a0b5678e8616c6c163af02a"});
-        });mw.loader.implement("user.tokens@0tffind",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"editToken":"320577e8771651ffe9d7b3153d684d0e5e696e2b+\\","patrolToken":"d48e8873d24c972cb1b43020e331d84d5e696e2b+\\","watchToken":"abc6827b01ad760917e05d3e476d23005e696e2b+\\","csrfToken":"320577e8771651ffe9d7b3153d684d0e5e696e2b+\\"});
-        });RLPAGEMODULES=["ext.maps.leaflet.loader","site","mediawiki.page.startup","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.page.watch.ajax","mmv.head","mmv.bootstrap.autostart","skins.vector.js"];mw.loader.load(RLPAGEMODULES);});
-    </script>
+            <div id="card-alert" class="card light-blue">
 
+                <div class="notification card-content white-text">
 
-    <?php
-    // These files ned to be included for the map to work. Note that the first one refers to a MediaWiki installation.
-    // Note that some relative file paths have been given. These would need to be the full URL, or else the base href would cause issues. ?>
-{{--    <link rel="stylesheet" href="https://randall.ie/help/style.css.php">--}}
-    <script async="" src="https://motorwayservices.ie/wiki/load.php?debug=false&lang=en&modules=startup&only=scripts&skin=vector"></script>
-    <link rel="stylesheet" href="https://randall.ie/wiki/extensions/Maps/resources/lib/leaflet/leaflet.css"/>
-    <script src="https://randall.ie/wiki/extensions/Maps/resources/lib/leaflet/leaflet.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                    <i class="notification-icon material-icons-outlined">notification_important</i>
 
-    <?php
-    // The map code.
-    // Apologies for the ugliness - I understand that line breaks can cause issues.
-    // Several parameters are applied. It then adds each marker.
-    // You see that there is scope to turn lat, lon and message into variables.
-    // Issue: Using HTML - or even any punctuation - in the marker can become messy.
-    // You can set a centre point for the map. This can cause odd behaviour on a busy map though.
-    // There is access to alternative services to OpenStreetMap: basically the entire OpenLayers library.
-    // Note that the location of the marker has been given a relative file path. It would need the full URL, or else the base href would cause issues. ?>
+                    <span>SUCCESS: {{session()->pull('message')}}</span>
 
-    <div style="height: 90vh" id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+                </div>
 
-        <div class="mw-parser-output" style="margin-top: 20px;padding-left: 50px;padding-right: 50px">
+            </div>
 
-            <div id="map_leaflet_1" style=" margin-bottom:1em !important;height: 700px!important; background-color: #eeeeee; overflow: hidden;" class="maps-map maps-leaflet">
+        @endif
 
-                <div class="maps-loading-message">Loading map...</div>
+        @if ($errors->any())
 
-                <div style="display: none" class="mapdata">{"minzoom":14,"maxzoom":16,"mappingservice":"leaflet","width":"auto","height":"575px","centre":{"text":"","title":"","link":"","lat":<?php echo "$lat,\"lon\":$lon" ;?>,"icon":""},"title":"","label":"","icon":"","lines":[],"polygons":[],"circles":[],"rectangles":[],"copycoords":false,"static":false,"zoom":16,"defzoom":16,"layers":["OpenStreetMap"],"overlays":[],"resizable":true,"fullscreen":false,"scrollwheelzoom":true,"cluster":false,"clustermaxzoom":20,"clusterzoomonclick":true,"clustermaxradius":80,"clusterspiderfy":true,"geojson":"","clicktarget":"","locations":[{"text":"\u003Cdiv\u003E\u003Cp\u003E MARKER CONTENT HERE \u003C/p\u003E\u003C/div\u003E","title":"MARKER SUMMARY HERE","link":"","lat":53.044268999999,"lon":-6.09046790000000015652403817,"icon":"https://randall.ie/help/marker-icon.png"}],"imageoverlays":null}</div>
+            <div id="card-alert" class="card red lighten-1">
+
+                <div class="notification card-content white-text">
+
+                    <i class="notification-icon material-icons-outlined">notification_important</i>
+
+                    <span>ERROR: Please review your details in the form below.</span>
+
+                    <br>
+
+                </div>
+
+            </div>
+
+        @endif
+
+        <div class="row">
+
+            <div class="col s12">
+
+                <div id='map'></div>
+
+                <script>
+                    mapboxgl.accessToken = 'pk.eyJ1IjoiY3J5cHRva25pZ2h0IiwiYSI6ImNrN3c3emtyNTAwMnUza203ajkxdnltbnEifQ.cIJgx9Rz3A-uOJ1zsWtdQg';
+                    var map = new mapboxgl.Map({
+                        container: 'map',
+                        style: 'mapbox://styles/mapbox/dark-v10',
+                        center: [-6.2488 , 53.3338],
+
+                        zoom: 5
+                    });
+
+                    map.on('load', async function() {
+
+                        let data = await getUsersData();
+
+                        // Add a new source from our GeoJSON data and
+                        // set the 'cluster' option to true. GL-JS will
+                        // add the point_count property to your source data.
+                        map.addSource('earthquakes', {
+                            type: 'geojson',
+                            // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
+                            // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
+                            //data: 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson',
+                            data: data.data,
+                            cluster: true,
+                            clusterMaxZoom: 14, // Max zoom to cluster points on
+                            clusterRadius: 30 // Radius of each cluster when clustering points (defaults to 50)
+                        });
+
+                        map.addLayer({
+                            id: 'clusters',
+                            type: 'circle',
+                            source: 'earthquakes',
+                            filter: ['has', 'point_count'],
+                            paint: {
+                                // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+                                // with three steps to implement three types of circles:
+                                //   * Blue, 20px circles when point count is less than 100
+                                //   * Yellow, 30px circles when point count is between 100 and 750
+                                //   * Pink, 40px circles when point count is greater than or equal to 750
+                                'circle-color': [
+                                    'step',
+                                    ['get', 'point_count'],
+                                    '#E91E63',
+                                    100,
+                                    '#FF5722',
+                                    750,
+                                    '#2196F3'
+                                ],
+                                'circle-radius': [
+                                    'step',
+                                    ['get', 'point_count'],
+                                    20,
+                                    100,
+                                    30,
+                                    750,
+                                    40
+                                ]
+                            }
+                        });
+
+                        map.addLayer({
+                            id: 'cluster-count',
+                            type: 'symbol',
+                            source: 'earthquakes',
+                            filter: ['has', 'point_count'],
+                            layout: {
+                                'text-field': '{point_count_abbreviated}',
+                                'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+                                'text-size': 12
+                            }
+                        });
+
+                        map.addLayer({
+                            id: 'unclustered-point',
+                            type: 'circle',
+                            source: 'earthquakes',
+                            filter: ['!', ['has', 'point_count']],
+                            paint: {
+                                'circle-color': '#2196F3',
+                                'circle-radius': 4,
+                                'circle-stroke-width': 1,
+                                'circle-stroke-color': '#fff'
+                            }
+                        });
+
+                        // inspect a cluster on click
+                        map.on('click', 'clusters', function(e) {
+                            var features = map.queryRenderedFeatures(e.point, {
+                                layers: ['clusters']
+                            });
+                            var clusterId = features[0].properties.cluster_id;
+                            map.getSource('earthquakes').getClusterExpansionZoom(
+                                clusterId,
+                                function(err, zoom) {
+                                    if (err) return;
+
+                                    map.easeTo({
+                                        center: features[0].geometry.coordinates,
+                                        zoom: zoom
+                                    });
+                                }
+                            );
+                        });
+
+                        // When a click event occurs on a feature in
+                        // the unclustered-point layer, open a popup at
+                        // the location of the feature, with
+                        // description HTML from its properties.
+                        map.on('click', 'unclustered-point', function(e) {
+
+                            let coordinates = e.features[0].geometry.coordinates.slice();
+                            let name = e.features[0].properties.name;
+                            let driving = e.features[0].properties.driving;
+                            let status = e.features[0].properties.status;
+
+                            // Ensure that if the map is zoomed out such that
+                            // multiple copies of the feature are visible, the
+                            // popup appears over the copy being pointed to.
+                            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                            }
+
+                            //alert(mag)
+
+                            new mapboxgl.Popup()
+                                .setLngLat(coordinates)
+                                .setHTML("<strong>Name: </strong>" + name + "</br>" +
+                                         "<strong>Driving: </strong>" + driving + "</br>" +
+                                         "<strong>Status: </strong>" + status + "</br>")
+                                .addTo(map);
+                        });
+
+                        map.on('mouseenter', 'clusters', function() {
+                            map.getCanvas().style.cursor = 'pointer';
+                        });
+                        map.on('mouseleave', 'clusters', function() {
+                            map.getCanvas().style.cursor = '';
+                        });
+                    });
+
+                    async function getUsersData () {
+                        // Performing a GET request
+                        return axios.get('http://localhost/Covid19CommunityResponse/public/get_map_data');
+                    }
+
+                </script>
 
             </div>
 

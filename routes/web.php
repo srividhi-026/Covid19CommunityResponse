@@ -22,14 +22,10 @@ Route::get('/register', function () {
 });
 
 Route::get('/map', function () {
-    return view('map2');
+    return view('map');
 });
 
-Route::get('/map2', function () {
-    return view('map2');
-});
-
-Route::get('get_map_data', 'RegisterController@get_map_data');
+Route::get('get_map_data', 'MapController@get_map_data');
 Route::post('do_register', 'RegisterController@do_register');
 
 Route::view('/privacy_policy', 'policies/privacy_policy');

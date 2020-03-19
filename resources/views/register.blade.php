@@ -36,8 +36,6 @@
 
         @endif
 
-
-
         <div class="auth-form-container">
 
             <div class="auth-form">
@@ -58,7 +56,7 @@
 
                         <div class="row">
 
-                            <div class="input-field col s12">
+                            <div class="input-field col s12 l6">
 
                                 <i class="material-icons-outlined prefix">perm_identity</i>
 
@@ -67,12 +65,14 @@
                                 <label for="first_name">First Name</label>
 
                                 @if ($errors->has('first_name'))
+
                                     <p class="error">{{ $errors->first('first_name') }}</p>
+
                                 @endif
 
                             </div>
 
-                            <div class="input-field col s12">
+                            <div class="input-field col s12 l6">
 
                                 <i class="material-icons-outlined prefix">people_outline</i>
 
@@ -86,7 +86,7 @@
 
                             </div>
 
-                            <div class="input-field col s12">
+                            <div class="input-field col s12 l6">
 
                                 <i class="material-icons-outlined prefix">email</i>
 
@@ -100,43 +100,7 @@
 
                             </div>
 
-                            <div class="input-field col s6">
-
-                                <i class="material-icons-outlined prefix">place</i>
-
-                                <input id="lat" name="lat" type="text" value="{{ old('lat') }}">
-
-                                <label id="lat-label" for="lat">Latitude</label>
-
-                                @if ($errors->has('lat'))
-                                    <p class="error">{{ $errors->first('lat') }}</p>
-                                @endif
-
-                            </div>
-
-                            <div class="input-field col s6">
-
-                                <i class="material-icons-outlined prefix">place</i>
-
-                                <input id="lng" name="lng" type="text" value="{{ old('lng') }}">
-
-                                <label id="lng-label" for="lng">Longitude</label>
-
-                                @if ($errors->has('lng'))
-
-                                    <p class="error">{{ $errors->first('lng') }}</p>
-
-                                @endif
-
-                            </div>
-
-                            <div class="col s12 center">
-
-                                <a class="btn" onclick="getLocation()">Find My Location</a>
-
-                            </div>
-
-                            <div class="input-field col s12">
+                            <div class="input-field col s12 l6">
 
                                 <i class="material-icons-outlined prefix">phone</i>
 
@@ -210,6 +174,48 @@
 
                             </div>
 
+
+                            <div class="input-field col s6">
+
+                                <i class="material-icons-outlined prefix">place</i>
+
+                                <input id="lat" name="lat" type="text" value="{{ old('lat') }}">
+
+                                <label id="lat-label" for="lat">Latitude</label>
+
+                                @if ($errors->has('lat'))
+                                    <p class="error">{{ $errors->first('lat') }}</p>
+                                @endif
+
+                            </div>
+
+                            <div class="input-field col s6">
+
+                                <i class="material-icons-outlined prefix">place</i>
+
+                                <input id="lng" name="lng" type="text" value="{{ old('lng') }}">
+
+                                <label id="lng-label" for="lng">Longitude</label>
+
+                                @if ($errors->has('lng'))
+
+                                    <p class="error">{{ $errors->first('lng') }}</p>
+
+                                @endif
+
+                            </div>
+
+                            <div class="col s12 center">
+
+                                <p>Drag the map marker to set you location.</p>
+
+                                <script src='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.js'></script>
+                                <link href='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.css' rel='stylesheet' />
+
+                                <div id='lat-lng-map'></div>
+
+                            </div>
+
                             <div class="input-field col s12 ">
 
                                 <label>
@@ -246,7 +252,7 @@
 
                                     <input name="privacy_policy" type="checkbox" class="filled-in"/>
 
-                                    <span> Agree our Privacy Policy. Read
+                                    <span> Agree to our Privacy Policy. Read
 
                                         <a href="{{url('privacy_policy')}}" target="_blank">
                                             here
@@ -255,6 +261,7 @@
                                     </span>
 
                                 </label>
+
                                 <br>
 
                                 @if ($errors->has('privacy_policy'))
@@ -269,11 +276,12 @@
 
                                     <input name="confidentiality" type="checkbox" class="filled-in" />
 
-                                    <span> Confidentitality Agreement. Read <a href="{{url('confidentiality')}}" target="_blank"> here </a></span>
+                                    <span> Confidentiality Agreement. Read <a href="{{url('confidentiality')}}" target="_blank"> here </a></span>
 
                                 </label>
 
                                 <br>
+
                                 @if ($errors->has('confidentiality'))
                                     <p class="error">{{ $errors->first('confidentiality') }}</p>
                                 @endif
@@ -286,9 +294,25 @@
 
                                     <input name="contact_email" type="checkbox" class="filled-in"/>
 
-                                    <span> Can we contact you by email </span>
+                                    <span> Can we contact you by email?</span>
 
                                 </label>
+
+                                <br>
+
+                            </div>
+
+                            <div class="input-field col s12">
+
+                                <label>
+
+                                    <input name="group" type="checkbox" class="filled-in"/>
+
+                                    <span> Are you  part of a group?</span>
+
+                                </label>
+
+                                <br>
 
                             </div>
 
@@ -319,18 +343,31 @@
     </main>
 
     <script>
+        L.mapbox.accessToken = 'pk.eyJ1IjoiY3J5cHRva25pZ2h0IiwiYSI6ImNrN3c3emtyNTAwMnUza203ajkxdnltbnEifQ.cIJgx9Rz3A-uOJ1zsWtdQg';
+        var map = L.mapbox.map('lat-lng-map')
+            .setView([53.3338, -6.2488], 5)
+            .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/dark-v10'));
 
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
-            }
-        }
+        var coordinates = document.getElementById('coordinates');
 
-        function showPosition(position) {
-            document.getElementById('lat').value = position.coords.latitude;
-            document.getElementById('lng').value = position.coords.longitude;
+        var marker = L.marker([53.3338, -6.2488], {
+            icon: L.mapbox.marker.icon({
+                'marker-color': '#f86767'
+            }),
+            draggable: true
+        }).addTo(map);
+
+        // every time the marker is dragged, update the coordinates container
+        marker.on('dragend', ondragend);
+
+        // Set the initial marker coordinate on load.
+        //ondragend();
+
+        function ondragend() {
+            var m = marker.getLatLng();
+
+            document.getElementById('lat').value = m.lat;
+            document.getElementById('lng').value = m.lng;
 
             document.getElementById('lat-label').classList.add("active");
             document.getElementById('lng-label').classList.add("active");

@@ -168,6 +168,14 @@ footer{
     color: red;
 }
 
+#map {
+    height: 600px;
+}
+
+#lat-lng-map{
+    height: 300px;
+}
+
 @media only screen and (max-width: 600px) {
     footer {
         text-align: center;
@@ -203,5 +211,10 @@ footer{
 
     .banner {
         height: 60vh;
+    }
+
+
+    .auth-form{
+        width: 700px;
     }
 }
