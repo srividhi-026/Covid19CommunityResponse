@@ -3,12 +3,27 @@
     <div class="main-wrapper container-fluid">
 
         <div class="row banner">
+
             <br><br>
-            <h1 class="header center ">
-                <span class="orange-font  banner-text">NATIONAL SUPPORT HELPLINE</span><br>
-                <span class="banner-number">TEXT: +353 86 180 OR CALL: +353 21 237 7809 </span> <br>
-                <span class="green-text banner-text">ONE COMMUNITY, TOGETHER.</span> <br>
+
+            <h1 class="header center">
+
+                <span class="orange-font">COVID COMMUNITY RESPONSE</span>
+
+                IS ABOUT COLLABORATION; <br> ORGANISATION AND LOCAL
+                INITIATIVES WORKING IN PARTNERSHIP, <br>
+                PROVIDING ESSENTIALS FOR THOSE IN NEED
+
             </h1>
+
+            <div class="row center">
+
+                <h2 class=" col s12 light green-text banner-text">ONE COMMUNITY, TOGETHER</h2>
+
+            </div>
+
+            <br><br>
+
         </div>
 
         <div class="row links">

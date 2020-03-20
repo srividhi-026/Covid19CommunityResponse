@@ -22,7 +22,7 @@ nav .sidenav-trigger {
 }
 
 .banner {
-    height: 50vh;
+    height: 60vh;
 }
 
 .links {
@@ -53,7 +53,7 @@ nav .sidenav-trigger {
 }
 
 .green-font {
-    color: #239b62;
+    color: #129b63;
 }
 
 .orange-font {
@@ -61,18 +61,14 @@ nav .sidenav-trigger {
 }
 
 .header {
+    font-size: 30px;
     color: grey;
 }
 
 .banner-text {
-    font-size: 35px;
-    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
-}
-
-.banner-number {
-    font-size: 35px;
-    font-family: 'Oswald', sans-serif;
 }
 
 .green-container {
