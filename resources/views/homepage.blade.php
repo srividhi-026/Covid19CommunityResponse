@@ -7,7 +7,7 @@
             <h1 class="header center ">
                 <span class="orange-font  banner-text">NATIONAL SUPPORT HELPLINE</span><br>
                 <span class="banner-number">TEXT: +353 86 180 OR CALL: +353 21 237 7809 </span> <br>
-                <span class="green-text banner-text">ONE COMMUNITY, TOGETHER.</span>
+                <span class="green-text banner-text">ONE COMMUNITY, TOGETHER.</span> <br>
             </h1>
         </div>
 

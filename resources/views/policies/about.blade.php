@@ -15,7 +15,7 @@
 
         <div class="text-center">
 
-            <img src="{{url('/img/helpline_photo.png')}}" alt="Helpline numbers photo" />
+            <img src="{{url('/img/helpline_photo.png')}}" alt="Helpline numbers photo" class="responsive-img">
 
         </div>
 
@@ -40,7 +40,7 @@
 
         <div class="text-center">
 
-            <img src="{{url('/img/operate_method.png')}}" alt="How CCR operates"/>
+            <img src="{{url('/img/operate_method.png')}}" alt="How CCR operates" class="responsive-img"/>
 
         </div>
 
