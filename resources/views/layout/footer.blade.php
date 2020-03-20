@@ -20,6 +20,12 @@
                             </a>
                         </li>
 
+                        <li>
+                            <a class="white-text" href="{{url('team')}}" target="_blank">
+                                Team
+                            </a>
+                        </li>
+
                     </ul>
 
                 </div>
