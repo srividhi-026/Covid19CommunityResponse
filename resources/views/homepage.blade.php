@@ -6,7 +6,7 @@
             <br><br>
             <h1 class="center">
                 <span class="orange-font banner-text">NATIONAL SUPPORT HELPLINE</span><br>
-                <span class="banner-number header">TEXT: +353 86 180</span><span class="normal-text"> OR </span><span class="banner-number header">CALL: +353 21 237 7809  </span><br>
+                <span class="header banner-number">TEXT: </span> <span class="banner-number normal-text"><a href="tel:086 180 0256"><b>086 180 0256 </b></a></span><span class="header banner-number">&nbsp;&nbsp; CALL: </span><span class="banner-number normal-text"><a href="tel:021 237 7809"><b>021 237 7809</b></a></span><br>
                 <span class="green-text banner-text">ONE COMMUNITY, TOGETHER.</span> <br>
             </h1>
         </div>
