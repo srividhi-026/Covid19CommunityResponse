@@ -65,7 +65,7 @@ nav .sidenav-trigger {
 }
 
 .banner-text {
-    font-size: 35px;
+    font-size: 40px;
     font-family: 'Oswald', sans-serif;
     font-weight: bolder;
 }
@@ -207,12 +207,11 @@ footer{
     .normal-text {
         font-size: 20px;
     }
-
 }
 
 @media only screen and (max-width: 768px) {
     .banner {
-        height: 45vh;
+        height: 75vh;
     }
 }
 
