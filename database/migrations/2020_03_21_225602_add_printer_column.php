@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Add3dprinterColumn extends Migration
+class AddPrinterColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class Add3dprinterColumn extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->tinyInteger('3dprinter')->after('group')->default(0);
+            $table->tinyInteger('printer')->after('group')->default(0);
         });
     }
 
@@ -26,7 +26,7 @@ class Add3dprinterColumn extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('3dprinter');
+            $table->dropColumn('printer');
         });
     }
 }

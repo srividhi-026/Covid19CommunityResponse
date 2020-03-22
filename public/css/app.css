@@ -16,6 +16,10 @@ nav .sidenav-trigger {
     float: right !important;
 }
 
+nav .brand-logo {
+    height: 80px;
+}
+
 .logo {
     height: 80px;
     margin: 10px;

@@ -39,6 +39,8 @@
         <div class="row">
 
             <div class="col s12">
+                <button href="#" type="button" onclick="updateMapData('standard')" class="btn btn-primary">Help Available</button>
+                <button href="#" type="button" onclick="updateMapData('3d_printer_locations')" class="btn btn-secondary">3D Printers Available</button>
 
                 <div id='map'></div>
 
@@ -54,8 +56,8 @@
 
                     map.on('load', async function() {
 
-                        let data = await getUsersData();
-
+                        let data = await getMapData('get_map_data');
+                        
                         // Add a new source from our GeoJSON data and
                         // set the 'cluster' option to true. GL-JS will
                         // add the point_count property to your source data.
@@ -181,10 +183,24 @@
                             map.getCanvas().style.cursor = '';
                         });
                     });
+                    
+                    
+                    async function updateMapData(dataType) {
 
-                    async function getUsersData () {
+                        let data; 
+                        if(dataType === '3d_printer_locations'){
+                            data = await getMapData('get_3d_printer_map_data');
+                            map.getSource('earthquakes').setData(data.data);
+                        }else{
+                            data = await getMapData('get_map_data');
+                            map.getSource('earthquakes').setData(data.data);
+                        }
+                    }
+
+                    async function getMapData (dataType) {
                         // Performing a GET request
-                        return axios.get('https://covidcommunityresponse.ie/get_map_data');
+                        //return axios.get('https://covidcommunityresponse.ie/get_map_data');
+                        return axios.get('http://localhost:8888/Covid19CommunityResponse/public/'+dataType);
                     }
 
                 </script>

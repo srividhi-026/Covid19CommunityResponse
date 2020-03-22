@@ -91,5 +91,51 @@ class MapController extends Controller
 
         return $map_data;
     }
+    
+    
+    public function get_3d_printer_map_data (Request $request) {
+        $users = User::all();
+
+        $map_data = '{"type": "FeatureCollection","crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                      "features": [';
+
+        $count = count($users);
+        $counter = 1;
+
+        foreach ($users as $user) {
+            $printerDetails = \App\PrinterDetails::where('user_id',$user->id)->first();
+                    
+            // weed out any users with invalid lat lng coords. and make sure they have a 3d printer
+            if(is_numeric($user->lat) && is_numeric($user->lng) && $printerDetails) {
+
+                $map_data .= '{"type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [ ' . $user->lng . ', ' . $user->lat . ', 0.0 ]
+                         },
+                         "properties": {
+                                "id": ' . $user->id . ',
+                                "mag": 2.3,
+                                "phone": "' . $user->phone . '",
+                                "name": "' . $user->first_name . '",
+                                "3D printer make": "' . $printerDetails->make . '",
+                                "3D printer model": "' . $printerDetails->model . '",
+                                "3D printer material": "' . $printerDetails->material . '",
+                                "Other 3D printer notes": "' . $printerDetails->notes . '"
+                            }
+                      }';
+
+                if ($count != $counter) {
+                    $map_data .= ',';
+                }
+            }
+
+            $counter++;
+        }
+
+        $map_data .= ']}';
+
+        return $map_data;
+    }
 
 }

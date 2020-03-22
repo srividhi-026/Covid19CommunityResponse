@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\PrinterDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -64,6 +65,16 @@ class RegisterController
             'group'         => $request->group == 'on' ? 1 : 0,
             'printer'     => $request->printer == 'on' ? 1 : 0
         ]);
+        
+        if($request->printer === 'on'){
+            PrinterDetails::create([
+                'user_id' => $user->id,
+                'make'    => $request->printer_make,
+                'model'     => $request->printer_model,
+                'material'     => $request->printer_material,
+                'notes'     => $request->printer_notes,
+            ]);
+        }
 
         if ($user) {
             Session::flash('message', 'Thank you for registering and giving your support!');

@@ -335,21 +335,21 @@
 
                                     <label>3D Pinter Make</label>
                                     
-                                    <input name="3dprinter-make" type="text" class="filled-in"/>
+                                    <input name="printer_make" type="text" class="filled-in" value="{{ old('printer_make') }}" />
                                     
                                 </div>
                                 <div class="input-field col s12">
 
                                     <label>3D Pinter Model</label>
                                     
-                                    <input name="3dprinter-model" type="text" class="filled-in"/>
+                                    <input name="printer_model" type="text" class="filled-in" value="{{ old('printer_model') }}"/>
                                     
                                 </div>
                                 <div class="input-field col s12">
 
                                     <label>Material</label>
                                     
-                                    <input name="3dprinter-material" type="text" class="filled-in"/>
+                                    <input name="printer_material" type="text" class="filled-in" value="{{ old('printer_material') }}"/>
                                     
                                 </div>
                                 
@@ -357,7 +357,7 @@
 
                                     <label>Notes</label>
                                     
-                                    <input name="3dprinter-notes" type="text" class="filled-in"/>
+                                    <input name="printer_notes" type="text" class="filled-in" value="{{ old('printer_notes') }}"/>
                                     
                                 </div>
 
