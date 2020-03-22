@@ -211,7 +211,7 @@
                     async function updateMapData(dataType) {
 
                         var standardMapBtn = document.getElementById("standard-map-btn");
-                        var printerMapBtn = document.getElementById("standard-map-btn");
+                        var printerMapBtn = document.getElementById("printer-map-btn");
                             
                         let data; 
                         if(dataType === '3d_printer_locations'){
@@ -237,7 +237,9 @@
 
                     async function getMapData (dataType) {
                         // Performing a GET request
-                        return axios.get('https://covidcommunityresponse.ie/get_map_data/'+dataType);
+                        return axios.get('https://covidcommunityresponse.ie/' + dataType);
+
+                        //For testing use the below
                         //return axios.get('http://localhost:8888/Covid19CommunityResponse/public/'+dataType);
                     }
 

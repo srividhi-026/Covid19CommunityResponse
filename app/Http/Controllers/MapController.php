@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\PrinterDetails;
 use Faker\Factory as Faker;
 use Illuminate\Http\Request;
 
@@ -95,11 +96,12 @@ class MapController extends Controller
     
     public function get_3d_printer_map_data (Request $request) {
         $users = User::all();
+        $all3DPrinterDetails = PrinterDetails::all();
 
         $map_data = '{"type": "FeatureCollection","crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
                       "features": [';
 
-        $count = count($users);
+        $count = count($all3DPrinterDetails);
         $counter = 1;
 
         foreach ($users as $user) {
@@ -128,9 +130,8 @@ class MapController extends Controller
                 if ($count != $counter) {
                     $map_data .= ',';
                 }
+                $counter++;
             }
-
-            $counter++;
         }
 
         $map_data .= ']}';
