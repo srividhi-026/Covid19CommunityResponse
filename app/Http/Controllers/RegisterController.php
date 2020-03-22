@@ -49,6 +49,9 @@ class RegisterController
             'over18'         => 'required',
             'privacy_policy' => 'required',
             'confidentiality'=> 'required',
+            'printer_make' => 'required_if:printer,on',
+            'printer_model' => 'required_if:printer,on',
+            'printer_material' => 'required_if:printer,on'
         ]);
 
         $user = User::create([
@@ -72,7 +75,7 @@ class RegisterController
                 'make'    => $request->printer_make,
                 'model'     => $request->printer_model,
                 'material'     => $request->printer_material,
-                'notes'     => $request->printer_notes,
+                'notes'     => $request->printer_notes ? $request->printer_notes : '',
             ]);
         }
 

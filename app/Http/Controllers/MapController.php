@@ -118,10 +118,10 @@ class MapController extends Controller
                                 "mag": 2.3,
                                 "phone": "' . $user->phone . '",
                                 "name": "' . $user->first_name . '",
-                                "3D printer make": "' . $printerDetails->make . '",
-                                "3D printer model": "' . $printerDetails->model . '",
-                                "3D printer material": "' . $printerDetails->material . '",
-                                "Other 3D printer notes": "' . $printerDetails->notes . '"
+                                "printer_make": "' . $printerDetails->make . '",
+                                "printer_model": "' . $printerDetails->model . '",
+                                "printer_material": "' . $printerDetails->material . '",
+                                "printer_notes": "' . $printerDetails->notes . '"
                             }
                       }';
 

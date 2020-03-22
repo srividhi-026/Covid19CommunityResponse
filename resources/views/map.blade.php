@@ -35,12 +35,18 @@
             </div>
 
         @endif
+        <div class="row">
+
+            <div class="col s12 m4 offset-4">
+                <button id="standard-map-btn" href="#" type="button" onclick="updateMapData('standard')" class="btn btn-primary">Help Available</button>
+                <button id="printer-map-btn" href="#" type="button" onclick="updateMapData('3d_printer_locations')" class="btn btn-inactive">3D Printers Available</button>
+            </div>
+            
+        </div>
 
         <div class="row">
 
             <div class="col s12">
-                <button href="#" type="button" onclick="updateMapData('standard')" class="btn btn-primary">Help Available</button>
-                <button href="#" type="button" onclick="updateMapData('3d_printer_locations')" class="btn btn-secondary">3D Printers Available</button>
 
                 <div id='map'></div>
 
@@ -159,6 +165,12 @@
                             let driving = e.features[0].properties.driving;
                             let status = e.features[0].properties.status;
 
+                            //3d printer details
+                            let printer_make = e.features[0].properties.printer_make;
+                            let printer_model = e.features[0].properties.printer_model;
+                            let printer_material = e.features[0].properties.printer_material;
+                            let printer_notes = e.features[0].properties.printer_notes;
+
                             // Ensure that if the map is zoomed out such that
                             // multiple copies of the feature are visible, the
                             // popup appears over the copy being pointed to.
@@ -166,14 +178,25 @@
                                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
                             }
 
-                            //alert(mag)
-
-                            new mapboxgl.Popup()
+                            if(typeof printer_make == "undefined"){
+                                new mapboxgl.Popup()
                                 .setLngLat(coordinates)
                                 .setHTML("<strong>Name: </strong>" + name + "</br>" +
                                          "<strong>Driving: </strong>" + driving + "</br>" +
                                          "<strong>Status: </strong>" + status + "</br>")
                                 .addTo(map);
+                            }else{
+                                new mapboxgl.Popup()
+                                .setLngLat(coordinates)
+                                .setHTML("<strong>Owner Name: </strong>" + name + "</br>" +
+                                         "<strong>3D Printer Make: </strong>" + printer_make + "</br>" +
+                                         "<strong>3D Printer Model: </strong>" + printer_model + "</br>" + 
+                                         "<strong>3D Printer Material: </strong>" + printer_material + "</br>" +
+                                         "<strong>3D Printer Notes: </strong>" + printer_notes + "</br>")
+                                         
+                                .addTo(map);
+                            }
+                            
                         });
 
                         map.on('mouseenter', 'clusters', function() {
@@ -187,20 +210,35 @@
                     
                     async function updateMapData(dataType) {
 
+                        var standardMapBtn = document.getElementById("standard-map-btn");
+                        var printerMapBtn = document.getElementById("standard-map-btn");
+                            
                         let data; 
                         if(dataType === '3d_printer_locations'){
                             data = await getMapData('get_3d_printer_map_data');
                             map.getSource('earthquakes').setData(data.data);
+
+                            standardMapBtn.classList.add("btn-inactive");
+                            
+                            printerMapBtn.classList.remove("btn-inactive");
+                            standardMapBtn.classList.add("btn-primary");
+                            
                         }else{
                             data = await getMapData('get_map_data');
                             map.getSource('earthquakes').setData(data.data);
+                            
+                            printerMapBtn.classList.add("btn-inactive");
+                            standardMapBtn.classList.remove("btn-inactive");
                         }
+                        
+                        
+                        
                     }
 
                     async function getMapData (dataType) {
                         // Performing a GET request
-                        //return axios.get('https://covidcommunityresponse.ie/get_map_data');
-                        return axios.get('http://localhost:8888/Covid19CommunityResponse/public/'+dataType);
+                        return axios.get('https://covidcommunityresponse.ie/get_map_data/'+dataType);
+                        //return axios.get('http://localhost:8888/Covid19CommunityResponse/public/'+dataType);
                     }
 
                 </script>

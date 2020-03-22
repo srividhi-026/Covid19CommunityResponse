@@ -190,6 +190,15 @@ footer{
     height: 300px;
 }
 
+
+#printer-details{
+    display: none;
+}
+
+.btn-inactive{
+    background-color: lightgray;
+}
+
 @media only screen and (max-width: 600px) {
     footer {
         text-align: center;

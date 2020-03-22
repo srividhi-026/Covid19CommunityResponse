@@ -220,7 +220,7 @@
 
                                 <label>
 
-                                    <input name="driving" type="checkbox" class="filled-in"/>
+                                    <input name="driving" type="checkbox" class="filled-in" {{ old('driving') ? 'checked' : '' }} />
 
                                     <span>Access to Car?</span>
 
@@ -233,7 +233,7 @@
 
                                 <label>
 
-                                    <input name="over18" type="checkbox" class="filled-in"/>
+                                    <input name="over18" type="checkbox" class="filled-in" {{ old('over18') ? 'checked' : '' }} />
 
                                     <span> Are you over 18?</span>
 
@@ -250,7 +250,7 @@
 
                                 <label>
 
-                                    <input name="privacy_policy" type="checkbox" class="filled-in"/>
+                                    <input name="privacy_policy" type="checkbox" class="filled-in" {{ old('privacy_policy') ? 'checked' : '' }} />
 
                                     <span> Agree to our Privacy Policy. Read
 
@@ -274,9 +274,9 @@
 
                                 <label>
 
-                                    <input name="confidentiality" type="checkbox" class="filled-in" />
+                                    <input name="confidentiality" type="checkbox" class="filled-in" {{ old('confidentiality') ? 'checked' : '' }} />
 
-                                    <span> Confidentiality Agreement. Read <a href="{{url('confidentiality')}}" target="_blank"> here </a></span>
+                                    <span> Agree to our Confidentiality Agreement. Read <a href="{{url('confidentiality')}}" target="_blank"> here </a></span>
 
                                 </label>
 
@@ -292,7 +292,7 @@
 
                                 <label>
 
-                                    <input name="contact_email" type="checkbox" class="filled-in"/>
+                                    <input name="contact_email" type="checkbox" class="filled-in" {{ old('contact_email') ? 'checked' : '' }}  />
 
                                     <span> Can we contact you by email?</span>
 
@@ -306,7 +306,7 @@
 
                                 <label>
 
-                                    <input name="group" type="checkbox" class="filled-in"/>
+                                    <input name="group" type="checkbox" class="filled-in" {{ old('group') ? 'checked' : '' }} />
 
                                     <span> Are you  part of a group?</span>
 
@@ -320,7 +320,7 @@
 
                                 <label>
 
-                                    <input name="printer" type="checkbox" class="filled-in"/>
+                                    <input onclick="displayPrinterDetailsSection()" id="printer-details-checkbox" name="printer" type="checkbox" class="filled-in" {{ old('printer') ? 'checked' : '' }} />
 
                                     <span>Do you have access to a 3D printer?</span>
 
@@ -330,13 +330,16 @@
 
                             </div>
                             
-                            <div id="3dprinter-details">
+                            <div id="printer-details">
                                 <div class="input-field col s12">
 
                                     <label>3D Pinter Make</label>
                                     
                                     <input name="printer_make" type="text" class="filled-in" value="{{ old('printer_make') }}" />
                                     
+                                    @if ($errors->has('printer_make'))
+                                    <p class="error">{{ $errors->first('printer_make') }}</p>
+                                    @endif
                                 </div>
                                 <div class="input-field col s12">
 
@@ -344,6 +347,9 @@
                                     
                                     <input name="printer_model" type="text" class="filled-in" value="{{ old('printer_model') }}"/>
                                     
+                                    @if ($errors->has('printer_model'))
+                                    <p class="error">{{ $errors->first('printer_model') }}</p>
+                                    @endif
                                 </div>
                                 <div class="input-field col s12">
 
@@ -351,6 +357,9 @@
                                     
                                     <input name="printer_material" type="text" class="filled-in" value="{{ old('printer_material') }}"/>
                                     
+                                    @if ($errors->has('printer_material'))
+                                    <p class="error">{{ $errors->first('printer_material') }}</p>
+                                    @endif
                                 </div>
                                 
                                 <div class="input-field col s12">
@@ -359,6 +368,9 @@
                                     
                                     <input name="printer_notes" type="text" class="filled-in" value="{{ old('printer_notes') }}"/>
                                     
+                                    @if ($errors->has('printer_notes'))
+                                    <p class="error">{{ $errors->first('printer_notes') }}</p>
+                                    @endif
                                 </div>
 
                             </div>
@@ -419,6 +431,24 @@
             document.getElementById('lat-label').classList.add("active");
             document.getElementById('lng-label').classList.add("active");
         }
+        
+        function displayPrinterDetailsSection() {
+            // Get the checkbox
+            var checkBox = document.getElementById("printer-details-checkbox");
+            // Get the output text
+            var printerDetails = document.getElementById("printer-details");
+
+            // If the checkbox is checked, display the output text
+            if (checkBox.checked == true){
+              printerDetails.style.display = "block";
+            } else {
+              printerDetails.style.display = "none";
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            displayPrinterDetailsSection();
+        }, false);
     </script>
 
 @include('layout.footer')
