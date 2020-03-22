@@ -61,7 +61,8 @@ class RegisterController
             'county'        => $request->county,
             'driving'       => $request->driving == 'on' ? 1 : 0,
             'contact_email' => $request->contact_email == 'on' ? 1 : 0,
-            'group'         => $request->group == 'on' ? 1 : 0
+            'group'         => $request->group == 'on' ? 1 : 0,
+            'printer'     => $request->printer == 'on' ? 1 : 0
         ]);
 
         if ($user) {

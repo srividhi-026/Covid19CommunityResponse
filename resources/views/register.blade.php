@@ -314,10 +314,57 @@
 
                                 <br>
 
+                            </div>                     
+                        
+                            <div class="input-field col s12">
+
+                                <label>
+
+                                    <input name="printer" type="checkbox" class="filled-in"/>
+
+                                    <span>Do you have access to a 3D printer?</span>
+
+                                </label>
+
+                                <br>
+
                             </div>
+                            
+                            <div id="3dprinter-details">
+                                <div class="input-field col s12">
 
+                                    <label>3D Pinter Make</label>
+                                    
+                                    <input name="3dprinter-make" type="text" class="filled-in"/>
+                                    
+                                </div>
+                                <div class="input-field col s12">
+
+                                    <label>3D Pinter Model</label>
+                                    
+                                    <input name="3dprinter-model" type="text" class="filled-in"/>
+                                    
+                                </div>
+                                <div class="input-field col s12">
+
+                                    <label>Material</label>
+                                    
+                                    <input name="3dprinter-material" type="text" class="filled-in"/>
+                                    
+                                </div>
+                                
+                                <div class="input-field col s12">
+
+                                    <label>Notes</label>
+                                    
+                                    <input name="3dprinter-notes" type="text" class="filled-in"/>
+                                    
+                                </div>
+
+                            </div>
+                            
                         </div>
-
+                        
                         <br>
 
                         <div class="row center">
