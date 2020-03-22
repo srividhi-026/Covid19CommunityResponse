@@ -74,4 +74,14 @@
 
     </li>
 
+    <li>
+
+        <a href="{{ url('register') }}" class="about">
+
+            Register
+
+        </a>
+
+    </li>
+
 </ul>

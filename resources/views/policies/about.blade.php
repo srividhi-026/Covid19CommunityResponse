@@ -25,7 +25,7 @@
 
     <p class="para">
         Covid Community Response is entirely staffed by volunteers who, seeing the needs of their community,
-        came together to make sure nobody is without support. Have a look at some of our team members here.
+        came together to make sure nobody is without support. Have a look at some of our team members <a href="{{url('/team')}}" target="_blank">here</a>.
     </p>
 
     <h6><b>What Support Can I Receive?</b></h6>
