@@ -26,6 +26,7 @@ Route::get('/map', function () {
 });
 
 Route::get('get_map_data', 'MapController@get_map_data');
+Route::get('get_3d_printer_map_data', 'MapController@get_3d_printer_map_data');
 Route::post('do_register', 'RegisterController@do_register');
 
 Route::view('/privacy_policy', 'policies/privacy_policy');

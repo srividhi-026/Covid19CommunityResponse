@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\PrinterDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -48,6 +49,9 @@ class RegisterController
             'over18'         => 'required',
             'privacy_policy' => 'required',
             'confidentiality'=> 'required',
+            'printer_make' => 'required_if:printer,on',
+            'printer_model' => 'required_if:printer,on',
+            'printer_material' => 'required_if:printer,on'
         ]);
 
         $user = User::create([
@@ -61,8 +65,19 @@ class RegisterController
             'county'        => $request->county,
             'driving'       => $request->driving == 'on' ? 1 : 0,
             'contact_email' => $request->contact_email == 'on' ? 1 : 0,
-            'group'         => $request->group == 'on' ? 1 : 0
+            'group'         => $request->group == 'on' ? 1 : 0,
+            'printer'     => $request->printer == 'on' ? 1 : 0
         ]);
+        
+        if($request->printer === 'on'){
+            PrinterDetails::create([
+                'user_id' => $user->id,
+                'make'    => $request->printer_make,
+                'model'     => $request->printer_model,
+                'material'     => $request->printer_material,
+                'notes'     => $request->printer_notes ? $request->printer_notes : '',
+            ]);
+        }
 
         if ($user) {
             Session::flash('message', 'Thank you for registering and giving your support!');

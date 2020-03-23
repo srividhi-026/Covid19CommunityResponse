@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\PrinterDetails;
 use Faker\Factory as Faker;
 use Illuminate\Http\Request;
 
@@ -85,6 +86,52 @@ class MapController extends Controller
             }
 
             $counter++;
+        }
+
+        $map_data .= ']}';
+
+        return $map_data;
+    }
+    
+    
+    public function get_3d_printer_map_data (Request $request) {
+        $users = User::all();
+        $all3DPrinterDetails = PrinterDetails::all();
+
+        $map_data = '{"type": "FeatureCollection","crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                      "features": [';
+
+        $count = count($all3DPrinterDetails);
+        $counter = 1;
+
+        foreach ($users as $user) {
+            $printerDetails = \App\PrinterDetails::where('user_id',$user->id)->first();
+                    
+            // weed out any users with invalid lat lng coords. and make sure they have a 3d printer
+            if(is_numeric($user->lat) && is_numeric($user->lng) && $printerDetails) {
+
+                $map_data .= '{"type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [ ' . $user->lng . ', ' . $user->lat . ', 0.0 ]
+                         },
+                         "properties": {
+                                "id": ' . $user->id . ',
+                                "mag": 2.3,
+                                "phone": "' . $user->phone . '",
+                                "name": "' . $user->first_name . '",
+                                "printer_make": "' . $printerDetails->make . '",
+                                "printer_model": "' . $printerDetails->model . '",
+                                "printer_material": "' . $printerDetails->material . '",
+                                "printer_notes": "' . $printerDetails->notes . '"
+                            }
+                      }';
+
+                if ($count != $counter) {
+                    $map_data .= ',';
+                }
+                $counter++;
+            }
         }
 
         $map_data .= ']}';

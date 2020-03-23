@@ -16,6 +16,10 @@ nav .sidenav-trigger {
     float: right !important;
 }
 
+nav .brand-logo {
+    height: 80px;
+}
+
 .logo {
     height: 80px;
     margin: 10px;
@@ -184,6 +188,15 @@ footer{
 
 #lat-lng-map{
     height: 300px;
+}
+
+
+#printer-details{
+    display: none;
+}
+
+.btn-inactive{
+    background-color: lightgray;
 }
 
 @media only screen and (max-width: 600px) {
