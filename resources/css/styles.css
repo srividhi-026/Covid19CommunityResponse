@@ -199,6 +199,38 @@ footer{
     background-color: lightgray;
 }
 
+#printer-steps{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 4rem;
+}
+
+.printer-images-container img, .printer-images-container2 img{
+    max-height: 275px !important;
+}
+
+.printer-images-container, .printer-images-container2{
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.printer-images-container{
+    width: 90%;
+}
+
+.printer-images-container2{
+    width: 50%;
+}
+
+#call-to-action{
+    min-width: 20%;
+    margin: auto;
+    display: block;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
 @media only screen and (max-width: 600px) {
     footer {
         text-align: center;
