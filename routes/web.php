@@ -25,6 +25,10 @@ Route::get('/map', function () {
     return view('map');
 });
 
+Route::get('/3d-printers', function () {
+    return view('3dprinters');
+});
+
 Route::get('get_map_data', 'MapController@get_map_data');
 Route::get('get_3d_printer_map_data', 'MapController@get_3d_printer_map_data');
 Route::post('do_register', 'RegisterController@do_register');
