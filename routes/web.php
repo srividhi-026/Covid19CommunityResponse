@@ -13,27 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+// homepage
+Route::view('/map', 'homepage/map');
+Route::view('/team', 'homepage/team');
+Route::view('/', 'homepage/homepage');
+Route::view('/about', 'homepage/about');
+Route::view('/3d-printers','homepage/3dprinters');
 
-Route::get('/register', function () {
-    return view('register');
-});
+// auth forms
+Route::view('/register', 'auth_forms/register');
+Route::view('/agent_register', 'auth_forms/agent_register_form');
 
-Route::get('/map', function () {
-    return view('map');
-});
-
-Route::get('/3d-printers', function () {
-    return view('3dprinters');
-});
-
+// get requests
 Route::get('get_map_data', 'MapController@get_map_data');
 Route::get('get_3d_printer_map_data', 'MapController@get_3d_printer_map_data');
+
+// post requests
 Route::post('do_register', 'RegisterController@do_register');
 
+// policies
 Route::view('/privacy_policy', 'policies/privacy_policy');
 Route::view('/confidentiality', 'policies/confidentiality');
-Route::view('/about', 'policies/about');
-Route::view('/team', 'policies/team');
+
+// agent policies
+Route::view('/agent_pp', 'agent_policies/agent_privacy_policy');
+Route::view('/agent_ca', 'agent_policies/agent_confidentiality_agreement');
+Route::view('/agent_data_pp', 'agent_policies/agent_data_protection_policy');
+Route::view('/agent_cyber_security_checklist', 'agent_policies/agent_cyber_security_checklist');

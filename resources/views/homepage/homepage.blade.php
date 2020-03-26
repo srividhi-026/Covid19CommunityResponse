@@ -21,7 +21,7 @@
 
             <div class="col s12 m6 green-container">
 
-                <a href="https://discord.gg/Ej2HrDW" class="main-link">JOIN THE DISCUSSION</a>
+                <a href="https://discord.gg/Ej2HrDW" class="main-link" target="_blank">JOIN THE DISCUSSION</a>
 
             </div>
 
