@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Agent;
 use App\PrinterDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -68,7 +69,7 @@ class RegisterController
             'group'         => $request->group == 'on' ? 1 : 0,
             'printer'     => $request->printer == 'on' ? 1 : 0
         ]);
-        
+
         if($request->printer === 'on'){
             PrinterDetails::create([
                 'user_id' => $user->id,
@@ -126,4 +127,61 @@ class RegisterController
         return $response;
     }
 
+    public function agent_register (Request $request) {
+        $request->validate([
+            'first_name'             => 'required|string',
+            'last_name'              => 'required|string',
+            'address'                => 'required|string',
+            'phone'                  => 'required',
+            'data_protection_policy' => 'required',
+            'privacy_policy'         => 'required',
+            'confidentiality'        => 'required',
+            'checklist'              => 'required',
+            'gdpr'                   => 'required'
+        ]);
+
+        $user = Agent::create([
+            'first_name'                => $request->first_name,
+            'last_name'                 => $request->last_name,
+            'address'                   => $request->address,
+            'phone'                     => $request->phone,
+            'confidentiality_agreement' => $request->confidentiality == 'on' ? 1 : 0,
+            'cyber_security'            => $request->checklist == 'on' ? 1 : 0,
+            'data_protection'           => $request->data_protection_policy == 'on' ? 1 : 0,
+            'privacy_policy'            => $request->privacy_policy == 'on' ? 1 : 0,
+            'gdpr'                      => $request->gdpr == 'on' ? 1 : 0
+        ]);
+
+
+        if ($user) {
+
+            // send notification to CCR-19 team
+            $email_data = array(
+                template_item('user', $user->first_name. ' '. $user->last_name),
+                template_item('location', $user->address)
+            );
+
+            $email_details = array(
+                'subject'       => 'New Agent registration',
+                'from_email'    => 'info@covidcommunityresponse.ie',
+                'from_name'     => 'CCR-19',
+                'to_email'      => 'covid19ire@gmail.com',
+                'template_name' => 'ccr_register_notify',
+                'template_data' => $email_data,
+            );
+
+            send_mandrill_email($email_details);
+
+            Session::flash('message', 'Thank you for registering and giving your support!');
+
+            $response = redirect('/agent_register');
+        }
+        else {
+            $request->flash('error', 'There was an error saving your details, please try again.');
+
+            $response = redirect('register')->withInput();
+        }
+
+        return $response;
+    }
 }
