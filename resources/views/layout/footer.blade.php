@@ -50,6 +50,12 @@
                             </a>
                         </li>
 
+                        <li>
+                            <a class="white-text" href="https://www.dropbox.com/sh/cfr1mcp1pyercwe/AAA75_grCkCBlGPI40PbWTDRa/Covid%20Community%20Response%20GDPR%20Training-4.mp4?dl=0" target="_blank">
+                                GDPR Training
+                            </a>
+                        </li>
+
                     </ul>
 
                 </div>

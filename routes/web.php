@@ -30,6 +30,7 @@ Route::get('get_3d_printer_map_data', 'MapController@get_3d_printer_map_data');
 
 // post requests
 Route::post('do_register', 'RegisterController@do_register');
+Route::post('agent_register', 'RegisterController@agent_register');
 
 // policies
 Route::view('/privacy_policy', 'policies/privacy_policy');
