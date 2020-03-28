@@ -36,7 +36,7 @@ Route::view('/privacy_policy', 'policies/privacy_policy');
 Route::view('/confidentiality', 'policies/confidentiality');
 
 // agent policies
-Route::view('/agent_pp', 'agent_policies/agent_privacy_policy');
+Route::view('/agent_privacy_policy', 'agent_policies/agent_privacy_policy');
 Route::view('/agent_ca', 'agent_policies/agent_confidentiality_agreement');
-Route::view('/agent_data_pp', 'agent_policies/agent_data_protection_policy');
-Route::view('/agent_cyber_security_checklist', 'agent_policies/agent_cyber_security_checklist');
+Route::view('/agent_data_protection_policy', 'agent_policies/agent_data_protection_policy');
+Route::view('/cyber_security_checklist', 'agent_policies/agent_cyber_security_checklist');

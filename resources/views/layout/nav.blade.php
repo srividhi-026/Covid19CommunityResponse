@@ -25,12 +25,12 @@
                 </a>
 
             </li>
-            
+
             <li>
 
                 <a href="{{url('3d-printers')}}" class="about">
 
-                    Register Your 3D Printer
+                    3D Printer
 
                 </a>
 
@@ -73,12 +73,12 @@
         </a>
 
     </li>
-    
+
     <li>
 
         <a href="{{ url('3d-printers') }}" class="about">
 
-            Register Your 3D Printer
+            3D Printer
 
         </a>
 

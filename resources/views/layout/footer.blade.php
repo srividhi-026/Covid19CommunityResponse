@@ -26,6 +26,30 @@
                             </a>
                         </li>
 
+                        <li>
+                            <a class="white-text" href="{{url('agent_data_protection_policy')}}" target="_blank">
+                                Data Protection Policy
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="white-text" href="{{url('agent_privacy_policy')}}" target="_blank">
+                                Agent Privacy Policy
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="white-text" href="{{url('agent_ca')}}" target="_blank">
+                                Confidentiality Agreement
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="white-text" href="{{url('cyber_security_checklist')}}" target="_blank">
+                                CyberSecurity Checklist
+                            </a>
+                        </li>
+
                     </ul>
 
                 </div>
