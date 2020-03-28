@@ -352,6 +352,11 @@
 
                             </div>
 
+                            <div class="input-field col s12">
+
+                                <p>Any questions or queries please email DPO at <a href="mailto:privacy@covidcommunityresponse.ie">privacy@covidcommunityresponse.ie</a></p>
+                            </div>
+
                             <br>
                             <div class="row center">
 
