@@ -41,6 +41,6 @@ class CreateAgentShiftsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agent_shifts_');
+        Schema::dropIfExists('agent_shifts');
     }
 }
