@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Agent;
+use App\AgentShift;
 use App\PrinterDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -140,7 +141,7 @@ class RegisterController
             'gdpr'                   => 'required'
         ]);
 
-        $user = Agent::create([
+        $agent = Agent::create([
             'first_name'                => $request->first_name,
             'last_name'                 => $request->last_name,
             'address'                   => $request->address,
@@ -152,13 +153,30 @@ class RegisterController
             'gdpr'                      => $request->gdpr == 'on' ? 1 : 0
         ]);
 
+        $agent_shift = AgentShift::create([
+            'agent_id'            => $agent->id,
+            'monday_morning'      => $request->monday == 'mon_morning' ? 1 : 0,
+            'monday_afternoon'    => $request->monday == 'mon_afternoon' ? 1 : 0,
+            'tuesday_morning'     => $request->tuesday == 'tues_morning' ? 1 : 0,
+            'tuesday_afternoon'   => $request->tuesday == 'tues_afternoon' ? 1 : 0,
+            'wednesday_morning'   => $request->wednesday == 'wed_morning' ? 1 : 0,
+            'wednesday_afternoon' => $request->wednesday == 'wed_afternoon' ? 1 : 0,
+            'thursday_morning'    => $request->thursday == 'thurs_morning' ? 1 : 0,
+            'thursday_afternoon'  => $request->thursday == 'thurs_afternoon' ? 1 : 0,
+            'friday_morning'      => $request->friday == 'fri_morning' ? 1 : 0,
+            'friday_afternoon'    => $request->friday == 'fri_afternoon' ? 1 : 0,
+            'saturday_morning'    => $request->saturday == 'sat_morning' ? 1 : 0,
+            'saturday_afternoon'  => $request->saturday == 'sat_afternoon' ? 1 : 0,
+            'sunday_morning'      => $request->sunday == 'sun_morning' ? 1 : 0,
+            'sunday_afternoon'    => $request->sunday == 'sun_afternoon' ? 1 : 0
+        ]);
 
-        if ($user) {
+        if ($agent) {
 
             // send notification to CCR-19 team
             $email_data = array(
-                template_item('user', $user->first_name. ' '. $user->last_name),
-                template_item('location', $user->address)
+                template_item('user', $agent->first_name. ' '. $agent->last_name),
+                template_item('location', $agent->address)
             );
 
             $email_details = array(

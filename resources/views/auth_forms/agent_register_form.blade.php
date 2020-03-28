@@ -121,6 +121,127 @@
 
                             <div class="input-field col s12">
 
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Day</th>
+                                            <th>Morning Shift (9.00am - 3.00pm)</th>
+                                            <th>Night Shift (3.00pm - 9.00pm)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Monday</td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="monday" type="radio" value="mon_morning"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="monday" type="radio" value="mon_afternoon"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tuesday</td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="tuesday" type="radio" value="tues_morning" />
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="tuesday" type="radio" value="tues_afternoon"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wednesday</td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="wednesday" type="radio" value="wed_morning" />
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="wednesday" type="radio" value="wed_afternoon"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thursday</td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="thursday" type="radio" value="thurs_morning" />
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="thursday" type="radio" value="thurs_afternoon"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Friday</td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="friday" type="radio" value="fri_morning" />
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="friday" type="radio" value="fri_afternoon"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Saturday</td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="saturday" type="radio" value="sat_morning" />
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="saturday" type="radio" value="sat_afternoon"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sunday</td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="sunday" type="radio" value="sun_morning" />
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="sunday" type="radio" value="sun_afternoon"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                            <div class="input-field col s12">
+
                                 <label>
 
                                     <input name="data_protection_policy" type="checkbox" class="filled-in" {{ old('data_protection_policy') ? 'checked' : '' }} />
@@ -187,8 +308,6 @@
 
                             </div>
 
-
-
                             <div class="input-field col s12">
 
                                 <label>
@@ -234,8 +353,9 @@
                             </div>
 
                             <br>
-                            <br>
                             <div class="row center">
+
+                                <br>
 
                                 <button class="btn waves-effect waves-light" type="submit" name="action">
 
