@@ -139,9 +139,9 @@
                                     <thead>
                                         <tr>
                                             <th>Day</th>
-                                            <th>9am - 1pm</th>
-                                            <th>1pm- 5pm</th>
-                                            <th>5pm - 9pm</th>
+                                            <th class="text-center">9am - 1pm</th>
+                                            <th class="text-center">1pm - 5pm</th>
+                                            <th class="text-center">5pm - 9pm</th>
                                         </tr>
                                     </thead>
                                     <tbody>
