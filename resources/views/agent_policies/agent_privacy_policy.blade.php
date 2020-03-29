@@ -7,11 +7,10 @@
     <p>
         Version: 1.1 <br>
         Creation Date: 16 March 2020 <br>
-        Amended: 21 March 2020<br>
     </p>
 
     <p>
-        Covid Community Response [the Organisation] is based in Ireland and has been set up in an effort
+        Covid Community Response is based in Ireland and has been set up in an effort
         to help coordinate ongoing national & local community initiatives in the fight against Covid-19,
         by sharing resources through connecting volunteers and service users.
     </p>
@@ -20,13 +19,6 @@
         Covid Community Response is made up of local volunteers to support vulnerable people during the
         Coronavirus outbreak. The service is set up to help the residents of Ireland with tasks such as
         shopping, transport, befriending, and basic support during isolation caused by the virus.
-    </p>
-
-    <p>
-        This Privacy Policy applies to our Organisation’s practices, our website, which are accessible
-        from covidcommunityresponse.ie and its sub-domains, as well as any associated mobile applications
-        owned and controlled by the Organisation. We are not responsible for the content or the privacy
-        notices for any websites to which we provide external links.
     </p>
 
     <h5>Identity of the Data Controller and Contact Details</h5>
@@ -54,7 +46,10 @@
         apply to activities and information on a going forward, not retroactive basis. You are encouraged to review
         this Notice periodically to make sure that you understand how any personal information you provide will be
         used. Any changes to this Privacy Policy and Notice will be posted on this website so you are always aware
-        of what information we collect, how we use it, and under what circumstances, if any, we disclose it.
+        of what information we collect, how we use it, and under what circumstances, if any, we disclose it. If at
+        any time we decide to use Personal Data in a manner significantly different from that stated in this Privacy
+        Policy and Notice, or otherwise disclosed to you at the time it was collected, we will notify you by email,
+        and you will have a choice as to whether or not we use your information in the new manner.
     </p>
 
     <h5>Why and how do we ensure compliance?</h5>
@@ -124,7 +119,7 @@
     <p>
         We will collect personal data with you in accordance with the purposes outlined in this document.
         This will be basic personal data used to facilitate a service type relationship, usually your name, phone
-        number and email address.
+        number and email address and from time to time billing information.
     </p>
 
     <h5>Special Category Personal Data</h5>
@@ -215,69 +210,6 @@
         </ul>
     </p>
 
-    <h5>Cookies</h5>
-
-    <p>
-        Cookies are small text files that are transferred to your computer’s hard drive through your web browser
-        to enable us to recognise your browser and help us to track visitors to our site for different purposes.
-        Most web browsers automatically accept cookies, but, if you wish, you can set your browser to prevent it
-        from accepting cookies. The “help” portion of the toolbar on most browsers will tell you how to prevent your
-        browser from accepting new cookies, how to have the browser notify you when you receive a new cookie, or how
-        to disable cookies altogether.
-    </p>
-
-    <h5>Technical Personal Data</h5>
-
-    <p>
-        Like most websites, we gather statistical and other analytical information collected on an aggregate basis
-        of all visitors to our website. We may gather technical information for security reasons. We will make no
-        attempt to identify individual visitors, or to associate the technical details listed below with any
-        individual. We will only use the technical information for statistical and other administrative purposes.
-    </p>
-
-    <p>
-        We may collect this technical information from you when you visit our website and accept cookies. This
-        information may include standard information from you (such as browser type and browser language), your
-        Internet Protocol (“IP”) address, and the actions you take on our website (such as the web pages viewed and
-        links clicked). We do note that your IP address is considered personal data under the GDPR.
-    </p>
-
-    <p>
-        Certain information in relation to web usage is revealed via our internet service provider or hosting
-        provider who records some of the following data. Whilst we do not access this information regularly, the
-        technical information may be used to inform our security measures, to allow us improve the information we
-        are supplying to our users, to find out how many people are visiting our sites and for statistical purposes.
-        The information we receive depends upon what you do when visiting our site:
-    </p>
-
-    <ul>
-        <li>&nbsp; - The IP address you are using.</li>
-        <li>&nbsp; - The date and time you access our site.</li>
-        <li>&nbsp; - The pages you have accessed and the documents downloaded. </li>
-        <li>&nbsp; - The previous Internet address from which you linked directly to our site.</li>
-        <li>&nbsp; - The user agent used to accessed our site.</li>
-    </ul>
-
-    <h5>Where does your data travel to?</h5>
-
-    <p>
-        We make use of Discordapp as a platform for the community forum. Discord processes your data in the USA.
-        Discord participates in and has certified its compliance with the EU-U.S. Privacy Shield Framework and the
-        Swiss-U.S. Privacy Shield Framework.
-    </p>
-
-    <p>
-        We make use of Twilio and Zendesk to manage our call centre. Both service providers employ appropriate
-        safeguards for cross-border transfers of personal data, as required by applicable local law, including
-        Binding Corporate Rules and the EU–U.S. Privacy Shield and Swiss–U.S. Privacy Shield Frameworks.
-    </p>
-
-    <p>
-        Depending on your choice of cookies, there may be one cookie that transfers data to the USA served from
-        Google Analytics namely the “collect” cookie.  Google participates in and has certified its compliance with
-        the EU-U.S. Privacy Shield Framework.
-    </p>
-
     <h5>Protecting your data</h5>
 
     <p>
@@ -364,14 +296,6 @@
     <h5>How do you exercise your rights or Opt Out?</h5>
 
     <p>
-        The Website offers a publicly accessible community forum and other interactive features (“Interactive Areas”).
-        You should be aware that any information that you post in an Interactive Area might be read, collected, and
-        used by others who access it. To request removal of your personal information from an Interactive Area,
-        contact us at privacy@covidcommunityresponse.ie. In some cases, we may not be able to remove your personal
-        information, in which case we will let you know if we are unable to do so and why.
-    </p>
-
-    <p>
         We have appointed a Data Protection Coordinator to monitor compliance with our data protection obligations
         and with this policy and our related policies. If you have any questions about this policy or about our data
         protection compliance, please contact the Data Protection Coordinator.
@@ -410,23 +334,6 @@
 
         Address: Data Protection Office – Canal House, Station Road, Portarlington, Co. Laois, R32 AP23. Or 21
         Fitzwilliam Square Dublin 2. D02 RD28 Ireland
-    </p>
-
-    <h4>Disclaimer</h4>
-
-    <p>
-        Covid Community Response’s website is an online community and information resource for volunteers and
-        volunteering organisations within the Republic of Ireland. The content of this website is provided for
-        information purposes only, Covid Community Response has made its best endeavours to ensure that the content
-        of this website is correct and current at the time of publication but makes no warranty, express or implied
-        that the material is accurate, authentic or complete and takes no responsibility for any error, omission or
-        defect. Covid Community Response does not accept any liabilities for any loss, damage, cost or expense you
-        or others might incur as a result of the information, advice or volunteering opportunities provided on this
-        website or incorporated into it by reference. Covid Community Response is not responsible for the operations
-        or conduct of volunteers or organisations using this service. The internet is not a secure medium and
-        communications to and from the website may be intercepted or altered in transit. Covid Community Response
-        does not warrant or represent that this website or any linked sites, are free from anything which may damage
-        any computer used to access this website.
     </p>
 
 </div>

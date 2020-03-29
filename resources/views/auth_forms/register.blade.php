@@ -217,7 +217,7 @@
                             </div>
                             
                             
-                                                        <div class="input-field col s12">
+                            <div class="input-field col s12">
 
                                 <label>
 
@@ -237,7 +237,7 @@
 
                                     <input onclick="displayPPEDetailsSection()" id="ppe-details-checkbox" name="ppe" type="checkbox" class="filled-in" {{ old('ppe') ? 'checked' : '' }} />
 
-                                    <span>Do you have access to a Personal Protective Equipment available for donation?</span>
+                                    <span>Do you have access to Personal Protective Equipment which is available for donation?</span>
 
                                 </label>
 

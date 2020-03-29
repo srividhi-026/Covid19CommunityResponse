@@ -37,10 +37,10 @@
         @endif
         <div class="row">
 
-            <div class="col s12 m4 offset-4">
+            <div class="col s12 m6 offset-4">
                 <button id="standard-map-btn" href="#" type="button" onclick="updateMapData('standard')" class="btn btn-primary">Help Available</button>
                 <button id="printer-map-btn" href="#" type="button" onclick="updateMapData('3d_printer_locations')" class="btn btn-inactive">3D Printers Available</button>
-                <button id="printer-map-btn" href="#" type="button" onclick="updateMapData('ppe_locations')" class="btn btn-inactive">PPE Available</button>
+                <button id="ppe-map-btn" href="#" type="button" onclick="updateMapData('ppe_locations')" class="btn btn-inactive">PPE Available</button>
             </div>
             
         </div>
@@ -171,6 +171,12 @@
                             let printer_model = e.features[0].properties.printer_model;
                             let printer_material = e.features[0].properties.printer_material;
                             let printer_notes = e.features[0].properties.printer_notes;
+                            
+                            //ppe details
+                            let ppe_supplies_description = e.features[0].properties.ppe_supplies_description;
+                            let volume = e.features[0].properties.volume;
+                            let eircode = e.features[0].properties.eircode;
+                            let availability_times = e.features[0].properties.availability_times;
 
                             // Ensure that if the map is zoomed out such that
                             // multiple copies of the feature are visible, the
@@ -179,14 +185,15 @@
                                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
                             }
 
-                            if(typeof printer_make == "undefined"){
+                            if(typeof printer_make == "undefined" && typeof driving == "undefined"){
                                 new mapboxgl.Popup()
-                                .setLngLat(coordinates)
-                                .setHTML("<strong>Name: </strong>" + name + "</br>" +
-                                         "<strong>Driving: </strong>" + driving + "</br>" +
-                                         "<strong>Status: </strong>" + status + "</br>")
+                                .setLngLat(coordinates).setHTML(
+                                         "<strong>PPE Description: </strong>" + ppe_supplies_description + "</br>" +
+                                         "<strong>PPE Volume: </strong>" + volume + "</br>" +
+                                         "<strong>General Pickup Times: </strong>" + availability_times + "</br>")
                                 .addTo(map);
-                            }else{
+                        
+                            }else if(typeof driving == "undefined" && typeof ppe_supplies_description == "undefined"){
                                 new mapboxgl.Popup()
                                 .setLngLat(coordinates)
                                 .setHTML("<strong>Owner Name: </strong>" + name + "</br>" +
@@ -195,6 +202,13 @@
                                          "<strong>3D Printer Material: </strong>" + printer_material + "</br>" +
                                          "<strong>3D Printer Notes: </strong>" + printer_notes + "</br>")
                                          
+                                .addTo(map);
+                            }else{
+                                new mapboxgl.Popup()
+                                .setLngLat(coordinates)
+                                .setHTML("<strong>Name: </strong>" + name + "</br>" +
+                                         "<strong>Driving: </strong>" + driving + "</br>" +
+                                         "<strong>Status: </strong>" + status + "</br>")
                                 .addTo(map);
                             }
                             
@@ -213,23 +227,39 @@
 
                         var standardMapBtn = document.getElementById("standard-map-btn");
                         var printerMapBtn = document.getElementById("printer-map-btn");
+                        var ppeMapBtn = document.getElementById("ppe-map-btn");
                             
                         let data; 
                         if(dataType === '3d_printer_locations'){
                             data = await getMapData('get_3d_printer_map_data');
                             map.getSource('earthquakes').setData(data.data);
 
+                            //add inactive to the other two buttons
+                            ppeMapBtn.classList.add("btn-inactive");
                             standardMapBtn.classList.add("btn-inactive");
                             
+                            //make the clicked button active
                             printerMapBtn.classList.remove("btn-inactive");
-                            standardMapBtn.classList.add("btn-primary");
+                            printerMapBtn.classList.add("btn-primary");
                             
-                        }else{
+                        }else if (dataType === 'ppe_locations') {
+                            data = await getMapData('get_ppe_map_data');
+                            map.getSource('earthquakes').setData(data.data);
+                            
+                            printerMapBtn.classList.add("btn-inactive");
+                            standardMapBtn.classList.add("btn-inactive");
+                            
+                            ppeMapBtn.classList.remove("btn-inactive");
+                            ppeMapBtn.classList.add("btn-primary");
+                        } else{
                             data = await getMapData('get_map_data');
                             map.getSource('earthquakes').setData(data.data);
                             
                             printerMapBtn.classList.add("btn-inactive");
+                            ppeMapBtn.classList.add("btn-inactive");
+                            
                             standardMapBtn.classList.remove("btn-inactive");
+                            standardMapBtn.classList.add("btn-primary");
                         }
                         
                         
@@ -238,10 +268,10 @@
 
                     async function getMapData (dataType) {
                         // Performing a GET request
-                        return axios.get('https://covidcommunityresponse.ie/' + dataType);
+                        //return axios.get('https://covidcommunityresponse.ie/' + dataType);
 
                         //For testing use the below
-                        //return axios.get('http://localhost:8888/Covid19CommunityResponse/public/'+dataType);
+                        return axios.get('http://localhost:8888/Covid19CommunityResponse/public/'+dataType);
                     }
 
                 </script>

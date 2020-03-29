@@ -9,6 +9,12 @@
                     <ul class="footer-ul-margin">
 
                         <li>
+                            <a class="white-text" href="{{url('team')}}" target="_blank">
+                                Team
+                            </a>
+                        </li>
+
+                        <li>
                             <a class="white-text" href="https://www2.hse.ie/conditions/coronavirus/coronavirus.html" target="_blank">
                                 Official Information
                             </a>
@@ -21,8 +27,32 @@
                         </li>
 
                         <li>
-                            <a class="white-text" href="{{url('team')}}" target="_blank">
-                                Team
+                            <a class="white-text" href="{{url('agent_data_protection_policy')}}" target="_blank">
+                                Data Protection Policy
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="white-text" href="{{url('agent_privacy_policy')}}" target="_blank">
+                                Agent Privacy Policy
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="white-text" href="{{url('agent_ca')}}" target="_blank">
+                                Confidentiality Agreement
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="white-text" href="{{url('cyber_security_checklist')}}" target="_blank">
+                                CyberSecurity Checklist
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="white-text" href="https://www.dropbox.com/sh/cfr1mcp1pyercwe/AAA75_grCkCBlGPI40PbWTDRa/Covid%20Community%20Response%20GDPR%20Training-4.mp4?dl=0" target="_blank">
+                                GDPR Training
                             </a>
                         </li>
 
