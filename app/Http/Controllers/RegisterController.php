@@ -134,7 +134,7 @@ class RegisterController
             'last_name'              => 'required|string',
             'address'                => 'required|string',
             'phone'                  => 'required|min:10',
-            'email'                  => 'required|email|unique:agents',
+            'email'                  => 'required|email|unique:agents,email',
             'data_protection_policy' => 'required',
             'privacy_policy'         => 'required',
             'confidentiality'        => 'required',
