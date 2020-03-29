@@ -268,10 +268,10 @@
 
                     async function getMapData (dataType) {
                         // Performing a GET request
-                        //return axios.get('https://covidcommunityresponse.ie/' + dataType);
+                        return axios.get('https://covidcommunityresponse.ie/' + dataType);
 
                         //For testing use the below
-                        return axios.get('http://localhost:8888/Covid19CommunityResponse/public/'+dataType);
+//                        return axios.get('http://localhost:8888/Covid19CommunityResponse/public/'+dataType);
                     }
 
                 </script>

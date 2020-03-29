@@ -216,6 +216,48 @@
 
                             </div>
                             
+                            <div class="input-field col s12">
+
+                                <label>
+
+                                    <input name="privacy_policy" type="checkbox" class="filled-in" {{ old('privacy_policy') ? 'checked' : '' }} />
+
+                                    <span> Agree to our Privacy Policy. Read
+
+                                        <a href="{{url('privacy_policy')}}" target="_blank">
+                                            here
+                                        </a>
+
+                                    </span>
+
+                                </label>
+
+                                <br>
+
+                                @if ($errors->has('privacy_policy'))
+                                    <p class="error">{{ $errors->first('privacy_policy') }}</p>
+                                @endif
+
+                            </div>
+
+                            <div class="input-field col s12">
+
+                                <label>
+
+                                    <input name="confidentiality" type="checkbox" class="filled-in" {{ old('confidentiality') ? 'checked' : '' }} />
+
+                                    <span> Agree to our Confidentiality Agreement. Read <a href="{{url('confidentiality')}}" target="_blank"> here </a></span>
+
+                                </label>
+
+                                <br>
+
+                                @if ($errors->has('confidentiality'))
+                                    <p class="error">{{ $errors->first('confidentiality') }}</p>
+                                @endif
+
+                            </div>
+                            
                             
                             <div class="input-field col s12">
 
@@ -292,47 +334,6 @@
 
                                 </div>
 
-                                <div class="input-field col s12">
-
-                                    <label>
-
-                                        <input name="privacy_policy" type="checkbox" class="filled-in" {{ old('privacy_policy') ? 'checked' : '' }} />
-
-                                        <span> Agree to our Privacy Policy. Read
-
-                                            <a href="{{url('privacy_policy')}}" target="_blank">
-                                                here
-                                            </a>
-
-                                        </span>
-
-                                    </label>
-
-                                    <br>
-
-                                    @if ($errors->has('privacy_policy'))
-                                        <p class="error">{{ $errors->first('privacy_policy') }}</p>
-                                    @endif
-
-                                </div>
-
-                                <div class="input-field col s12">
-
-                                    <label>
-
-                                        <input name="confidentiality" type="checkbox" class="filled-in" {{ old('confidentiality') ? 'checked' : '' }} />
-
-                                        <span> Agree to our Confidentiality Agreement. Read <a href="{{url('confidentiality')}}" target="_blank"> here </a></span>
-
-                                    </label>
-
-                                    <br>
-
-                                    @if ($errors->has('confidentiality'))
-                                        <p class="error">{{ $errors->first('confidentiality') }}</p>
-                                    @endif
-
-                                </div>
 
                                 <div class="input-field col s12">
 

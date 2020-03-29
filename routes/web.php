@@ -20,6 +20,7 @@ Route::view('/team', 'homepage/team');
 Route::view('/', 'homepage/homepage');
 Route::view('/about', 'homepage/about');
 Route::view('/3d-printers','homepage/3dprinters');
+Route::view('/donate-ppe','homepage/ppe');
 
 // auth forms
 Route::view('/register', 'auth_forms/register');

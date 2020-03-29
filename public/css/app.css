@@ -233,6 +233,16 @@ footer{
     margin-bottom: 4rem;
 }
 
+.list-of-ppe-items{
+    margin-bottom: 3rem;
+}
+
+.list-of-ppe-items li{
+    list-style-type: disc !important;
+    margin-left: 2rem !important;
+}
+
+
 @media only screen and (max-width: 600px) {
     footer {
         text-align: center;

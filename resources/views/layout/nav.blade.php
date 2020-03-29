@@ -38,7 +38,7 @@
             
             <li>
 
-                <a href="{{url('register-ppe')}}" class="about">
+                <a href="{{url('donate-ppe')}}" class="about">
 
                     Donate PPE
 
@@ -86,7 +86,7 @@
 
     <li>
 
-        <a href="{{url('register-ppe')}}" class="about">
+        <a href="{{url('donate-ppe')}}" class="about">
 
             Donate PPE
 
