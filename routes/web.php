@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 // homepage
 Route::view('/map', 'homepage/map');
 Route::view('/team', 'homepage/team');
 Route::view('/', 'homepage/homepage');
 Route::view('/about', 'homepage/about');
 Route::view('/3d-printers','homepage/3dprinters');
+Route::view('/donate-ppe','homepage/ppe');
 
 // auth forms
 Route::view('/register', 'auth_forms/register');
@@ -27,6 +29,7 @@ Route::view('/agent_register', 'auth_forms/agent_register_form');
 // get requests
 Route::get('get_map_data', 'MapController@get_map_data');
 Route::get('get_3d_printer_map_data', 'MapController@get_3d_printer_map_data');
+Route::get('get_ppe_map_data', 'MapController@get_ppe_map_data');
 
 // post requests
 Route::post('do_register', 'RegisterController@do_register');

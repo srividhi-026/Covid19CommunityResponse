@@ -6,6 +6,7 @@ use App\User;
 use App\Agent;
 use App\AgentShift;
 use App\PrinterDetails;
+use App\PPEDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -48,12 +49,16 @@ class RegisterController
             'lat'            => 'required|regex:/^-?\d{1,2}\.\d{6,}$/',
             'lng'            => 'required|regex:/^-?\d{1,2}\.\d{6,}$/',
             'county'         => 'required|string',
-            'over18'         => 'required',
             'privacy_policy' => 'required',
-            'confidentiality'=> 'required',
+            'confidentiality'=> 'required', 
+            'over18'         => 'required_if:volunteer,on',
             'printer_make' => 'required_if:printer,on',
             'printer_model' => 'required_if:printer,on',
-            'printer_material' => 'required_if:printer,on'
+            'printer_material' => 'required_if:printer,on',
+            'ppe_supplies_description' => 'required_if:ppe,on',
+            'volume' => 'required_if:ppe,on',
+            'eircode' => 'required_if:ppe,on',
+            'availability_times' => 'required_if:ppe,on'
         ]);
 
         $user = User::create([
@@ -68,7 +73,8 @@ class RegisterController
             'driving'       => $request->driving == 'on' ? 1 : 0,
             'contact_email' => $request->contact_email == 'on' ? 1 : 0,
             'group'         => $request->group == 'on' ? 1 : 0,
-            'printer'     => $request->printer == 'on' ? 1 : 0
+            'printer'     => $request->printer == 'on' ? 1 : 0,
+            'ppe'     => $request->ppe == 'on' ? 1 : 0
         ]);
 
         if($request->printer === 'on'){
@@ -80,6 +86,16 @@ class RegisterController
                 'notes'     => $request->printer_notes ? $request->printer_notes : '',
             ]);
         }
+        
+        if($request->ppe === 'on'){
+            PPEDetails::create([
+                'user_id' => $user->id,
+                'ppe_supplies_description' => $request->ppe_supplies_description,
+                'volume' => $request->volume,
+                'eircode' => $request->eircode,
+                'availability_times' => $request->availability_times,
+            ]);
+        }
 
         if ($user) {
             Session::flash('message', 'Thank you for registering and giving your support!');
@@ -89,7 +105,7 @@ class RegisterController
                 template_item('user', $user->first_name),
             );
 
-            $email_details = array(
+            $user_email_details = array(
                 'subject'       => 'Thanks for signing up',
                 'from_email'    => 'info@covidcommunityresponse.ie',
                 'from_name'     => '',
@@ -98,7 +114,7 @@ class RegisterController
                 'template_data' => $email_data,
             );
 
-            send_mandrill_email($email_details);
+            send_mandrill_email($user_email_details);
 
             // send notification to CCR-19 team
             $email_data = array(
@@ -106,16 +122,27 @@ class RegisterController
                 template_item('location', $user->county)
             );
 
-            $email_details = array(
-                'subject'       => 'New user registration',
-                'from_email'    => 'info@covidcommunityresponse.ie',
-                'from_name'     => 'CCR-19',
-                'to_email'      => 'covid19ire@gmail.com',
-                'template_name' => 'ccr_register_notify',
-                'template_data' => $email_data,
-            );
+            if($request->ppe === 'on'){
+                $ccr_email_details = array(
+                    'subject'       => 'PPE Donation',
+                    'from_email'    => 'info@covidcommunityresponse.ie',
+                    'from_name'     => 'CCR-19',
+                    'to_email'      => 'covid19ire@gmail.com',
+                    'template_name' => 'ccr_register_notify',
+                    'template_data' => $email_data,
+                );
+            }else{
+                $ccr_email_details = array(
+                    'subject'       => 'New user registration',
+                    'from_email'    => 'info@covidcommunityresponse.ie',
+                    'from_name'     => 'CCR-19',
+                    'to_email'      => 'covid19ire@gmail.com',
+                    'template_name' => 'ccr_register_notify',
+                    'template_data' => $email_data,
+                );
+            }
 
-            send_mandrill_email($email_details);
+            send_mandrill_email($ccr_email_details);
 
             $response = redirect('map');
         }

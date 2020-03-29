@@ -191,8 +191,10 @@ footer{
 }
 
 
-#printer-details{
+#printer-details, #volunteer-details, #ppe-details{
     display: none;
+    border-top: 1px solid;
+    margin-bottom: 2rem;
 }
 
 .btn-inactive{
@@ -230,6 +232,16 @@ footer{
     margin-top: 3rem;
     margin-bottom: 4rem;
 }
+
+.list-of-ppe-items{
+    margin-bottom: 3rem;
+}
+
+.list-of-ppe-items li{
+    list-style-type: disc !important;
+    margin-left: 2rem !important;
+}
+
 
 @media only screen and (max-width: 600px) {
     footer {

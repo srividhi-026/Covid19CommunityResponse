@@ -30,7 +30,17 @@
 
                 <a href="{{url('3d-printers')}}" class="about">
 
-                    3D Printer
+                    3D Printers
+
+                </a>
+
+            </li>
+            
+            <li>
+
+                <a href="{{url('donate-ppe')}}" class="about">
+
+                    Donate PPE
 
                 </a>
 
@@ -76,9 +86,19 @@
 
     <li>
 
+        <a href="{{url('donate-ppe')}}" class="about">
+
+            Donate PPE
+
+        </a>
+
+    </li>
+    
+    <li>
+
         <a href="{{ url('3d-printers') }}" class="about">
 
-            3D Printer
+            3D Printers
 
         </a>
 
