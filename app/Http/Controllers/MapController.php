@@ -138,5 +138,52 @@ class MapController extends Controller
 
         return $map_data;
     }
+    
+    
+    
+    public function get_ppe_map_data (Request $request) {
+        $users = User::all();
+        $allPPEDetails = \App\PPEDetails::all();
+
+        $map_data = '{"type": "FeatureCollection","crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                      "features": [';
+
+        $count = count($allPPEDetails);
+        $counter = 1;
+
+        foreach ($users as $user) {
+            $ppeDetails = \App\PPEDetails::where('user_id',$user->id)->first();
+                    
+            // weed out any users with invalid lat lng coords. and make sure they have a 3d printer
+            if(is_numeric($user->lat) && is_numeric($user->lng) && $ppeDetails) {
+
+                $map_data .= '{"type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [ ' . $user->lng . ', ' . $user->lat . ', 0.0 ]
+                         },
+                         "properties": {
+                                "id": ' . $user->id . ',
+                                "mag": 2.3,
+                                "phone": "' . $user->phone . '",
+                                "name": "' . $user->first_name . '",
+                                "ppe_supplies_description": "' . $ppeDetails->ppe_supplies_description . '",
+                                "volume": "' . $ppeDetails->volume . '",
+                                "eircode": "' . $ppeDetails->eircode . '",
+                                "availability_times": "' . $ppeDetails->availability_times . '"
+                            }
+                      }';
+
+                if ($count != $counter) {
+                    $map_data .= ',';
+                }
+                $counter++;
+            }
+        }
+
+        $map_data .= ']}';
+
+        return $map_data;
+    }
 
 }

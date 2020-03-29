@@ -40,6 +40,7 @@
             <div class="col s12 m4 offset-4">
                 <button id="standard-map-btn" href="#" type="button" onclick="updateMapData('standard')" class="btn btn-primary">Help Available</button>
                 <button id="printer-map-btn" href="#" type="button" onclick="updateMapData('3d_printer_locations')" class="btn btn-inactive">3D Printers Available</button>
+                <button id="printer-map-btn" href="#" type="button" onclick="updateMapData('ppe_locations')" class="btn btn-inactive">PPE Available</button>
             </div>
             
         </div>

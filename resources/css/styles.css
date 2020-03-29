@@ -191,8 +191,10 @@ footer{
 }
 
 
-#printer-details{
+#printer-details, #volunteer-details, #ppe-details{
     display: none;
+    border-top: 1px solid;
+    margin-bottom: 2rem;
 }
 
 .btn-inactive{

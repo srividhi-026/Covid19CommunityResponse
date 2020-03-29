@@ -30,7 +30,17 @@
 
                 <a href="{{url('3d-printers')}}" class="about">
 
-                    Register Your 3D Printer
+                    Register 3D Printers
+
+                </a>
+
+            </li>
+            
+            <li>
+
+                <a href="{{url('register-ppe')}}" class="about">
+
+                    Register PPE Supplies
 
                 </a>
 
@@ -76,9 +86,19 @@
     
     <li>
 
+        <a href="{{url('register-ppe')}}" class="about">
+
+            Register PPE Supplies
+
+        </a>
+
+    </li>
+    
+    <li>
+
         <a href="{{ url('3d-printers') }}" class="about">
 
-            Register Your 3D Printer
+            Register 3D Printers
 
         </a>
 

@@ -29,8 +29,13 @@ Route::get('/3d-printers', function () {
     return view('3dprinters');
 });
 
+Route::get('/register-ppe', function () {
+    return view('register_ppe');
+});
+
 Route::get('get_map_data', 'MapController@get_map_data');
 Route::get('get_3d_printer_map_data', 'MapController@get_3d_printer_map_data');
+Route::get('get_ppe_map_data', 'MapController@get_ppe_map_data');
 Route::post('do_register', 'RegisterController@do_register');
 
 Route::view('/privacy_policy', 'policies/privacy_policy');

@@ -215,107 +215,36 @@
                                 <div id='lat-lng-map'></div>
 
                             </div>
-
-                            <div class="input-field col s12 ">
-
-                                <label>
-
-                                    <input name="driving" type="checkbox" class="filled-in" {{ old('driving') ? 'checked' : '' }} />
-
-                                    <span>Access to Car?</span>
-
-                                </label>
-                                <br>
-
-                            </div>
-
-                            <div class="input-field col s12">
+                            
+                            
+                                                        <div class="input-field col s12">
 
                                 <label>
 
-                                    <input name="over18" type="checkbox" class="filled-in" {{ old('over18') ? 'checked' : '' }} />
+                                    <input onclick="displayVolunteerDetailsSection()" id="volunteer-details-checkbox" name="volunteer" type="checkbox" class="filled-in" {{ old('volunteer') ? 'checked' : '' }} />
 
-                                    <span> Are you over 18?</span>
-
-                                </label>
-
-                                <br>
-                                @if ($errors->has('over18'))
-                                    <p class="error">{{ $errors->first('over18') }}</p>
-                                @endif
-
-                            </div>
-
-                            <div class="input-field col s12">
-
-                                <label>
-
-                                    <input name="privacy_policy" type="checkbox" class="filled-in" {{ old('privacy_policy') ? 'checked' : '' }} />
-
-                                    <span> Agree to our Privacy Policy. Read
-
-                                        <a href="{{url('privacy_policy')}}" target="_blank">
-                                            here
-                                        </a>
-
-                                    </span>
-
-                                </label>
-
-                                <br>
-
-                                @if ($errors->has('privacy_policy'))
-                                    <p class="error">{{ $errors->first('privacy_policy') }}</p>
-                                @endif
-
-                            </div>
-
-                            <div class="input-field col s12">
-
-                                <label>
-
-                                    <input name="confidentiality" type="checkbox" class="filled-in" {{ old('confidentiality') ? 'checked' : '' }} />
-
-                                    <span> Agree to our Confidentiality Agreement. Read <a href="{{url('confidentiality')}}" target="_blank"> here </a></span>
-
-                                </label>
-
-                                <br>
-
-                                @if ($errors->has('confidentiality'))
-                                    <p class="error">{{ $errors->first('confidentiality') }}</p>
-                                @endif
-
-                            </div>
-
-                            <div class="input-field col s12">
-
-                                <label>
-
-                                    <input name="contact_email" type="checkbox" class="filled-in" {{ old('contact_email') ? 'checked' : '' }}  />
-
-                                    <span> Can we contact you by email?</span>
+                                    <span>Do you wish to volunteer your time?</span>
 
                                 </label>
 
                                 <br>
 
                             </div>
-
+                            
                             <div class="input-field col s12">
 
                                 <label>
 
-                                    <input name="group" type="checkbox" class="filled-in" {{ old('group') ? 'checked' : '' }} />
+                                    <input onclick="displayPPEDetailsSection()" id="ppe-details-checkbox" name="ppe" type="checkbox" class="filled-in" {{ old('ppe') ? 'checked' : '' }} />
 
-                                    <span> Are you  part of a group?</span>
+                                    <span>Do you have access to a Personal Protective Equipment available for donation?</span>
 
                                 </label>
 
                                 <br>
 
-                            </div>                     
-                        
+                            </div>
+                            
                             <div class="input-field col s12">
 
                                 <label>
@@ -329,8 +258,113 @@
                                 <br>
 
                             </div>
-                            
+                        </div>
+                            <div id="volunteer-details">
+                                <h6><b>Volunteer Information</b></h6>
+
+                                <div class="input-field col s12 ">
+
+                                    <label>
+
+                                        <input name="driving" type="checkbox" class="filled-in" {{ old('driving') ? 'checked' : '' }} />
+
+                                        <span>Access to Car?</span>
+
+                                    </label>
+                                    <br>
+
+                                </div>
+
+                                <div class="input-field col s12">
+
+                                    <label>
+
+                                        <input name="over18" type="checkbox" class="filled-in" {{ old('over18') ? 'checked' : '' }} />
+
+                                        <span> Are you over 18?</span>
+
+                                    </label>
+
+                                    <br>
+                                    @if ($errors->has('over18'))
+                                        <p class="error">{{ $errors->first('over18') }}</p>
+                                    @endif
+
+                                </div>
+
+                                <div class="input-field col s12">
+
+                                    <label>
+
+                                        <input name="privacy_policy" type="checkbox" class="filled-in" {{ old('privacy_policy') ? 'checked' : '' }} />
+
+                                        <span> Agree to our Privacy Policy. Read
+
+                                            <a href="{{url('privacy_policy')}}" target="_blank">
+                                                here
+                                            </a>
+
+                                        </span>
+
+                                    </label>
+
+                                    <br>
+
+                                    @if ($errors->has('privacy_policy'))
+                                        <p class="error">{{ $errors->first('privacy_policy') }}</p>
+                                    @endif
+
+                                </div>
+
+                                <div class="input-field col s12">
+
+                                    <label>
+
+                                        <input name="confidentiality" type="checkbox" class="filled-in" {{ old('confidentiality') ? 'checked' : '' }} />
+
+                                        <span> Agree to our Confidentiality Agreement. Read <a href="{{url('confidentiality')}}" target="_blank"> here </a></span>
+
+                                    </label>
+
+                                    <br>
+
+                                    @if ($errors->has('confidentiality'))
+                                        <p class="error">{{ $errors->first('confidentiality') }}</p>
+                                    @endif
+
+                                </div>
+
+                                <div class="input-field col s12">
+
+                                    <label>
+
+                                        <input name="contact_email" type="checkbox" class="filled-in" {{ old('contact_email') ? 'checked' : '' }}  />
+
+                                        <span> Can we contact you by email?</span>
+
+                                    </label>
+
+                                    <br>
+
+                                </div>
+
+                                <div class="input-field col s12">
+
+                                    <label>
+
+                                        <input name="group" type="checkbox" class="filled-in" {{ old('group') ? 'checked' : '' }} />
+
+                                        <span> Are you  part of a group?</span>
+
+                                    </label>
+
+                                    <br>
+
+                                </div>
+                            </div>
+                        
                             <div id="printer-details">
+                                <h6><b>3D Printer Information</b></h6>
                                 <div class="input-field col s12">
 
                                     <label>3D Pinter Make</label>
@@ -373,6 +407,53 @@
                                     @endif
                                 </div>
 
+                            </div>
+                            
+                            <div id="ppe-details">
+                                <h6><b>PPE Donations</b></h6>
+                                <div class="input-field col s12">
+
+                                    <label>Please describe what PPE supplies you have for donation</label>
+                                    
+                                    <input name="ppe_supplies_description" type="text" class="filled-in" value="{{ old('ppe_supplies_description') }}"/>
+                                    
+                                    @if ($errors->has('ppe_supplies_description'))
+                                    <p class="error">{{ $errors->first('ppe_supplies_description') }}</p>
+                                    @endif
+                                </div>
+                                
+                                <div class="input-field col s12">
+
+                                    <label>Volume of items for collection (How big is your package?)</label>
+                                    
+                                    <input name="volume" type="text" class="filled-in" value="{{ old('volume') }}"/>
+                                    
+                                    @if ($errors->has('volume'))
+                                    <p class="error">{{ $errors->first('volume') }}</p>
+                                    @endif
+                                </div>
+                            
+                                <div class="input-field col s12">
+
+                                    <label>Eircode (To enable a quick pickup from our couriers)</label>
+                                    
+                                    <input name="eircode" type="text" class="filled-in" value="{{ old('eircode') }}" />
+                                    
+                                    @if ($errors->has('eircode'))
+                                    <p class="error">{{ $errors->first('eircode') }}</p>
+                                    @endif
+                                </div>
+                            
+                                <div class="input-field col s12">
+
+                                    <label>General availability times for collection</label>
+                                    
+                                    <input name="availability_times" type="text" class="filled-in" value="{{ old('availability_times') }}"/>
+                                    
+                                    @if ($errors->has('availability_times'))
+                                    <p class="error">{{ $errors->first('availability_times') }}</p>
+                                    @endif
+                                </div>
                             </div>
                             
                         </div>
@@ -446,8 +527,36 @@
             }
         }
         
+        function displayVolunteerDetailsSection() {
+            // Get the checkbox
+            var checkBox = document.getElementById("volunteer-details-checkbox");
+            var volunteerDetails = document.getElementById("volunteer-details");
+
+            // If the checkbox is checked, display the output text
+            if (checkBox.checked == true){
+              volunteerDetails.style.display = "block";
+            } else {
+              volunteerDetails.style.display = "none";
+            }
+        }
+        
+        function displayPPEDetailsSection() {
+            // Get the checkbox
+            var checkBox = document.getElementById("ppe-details-checkbox");
+            var ppeDetails = document.getElementById("ppe-details");
+
+            // If the checkbox is checked, display the output text
+            if (checkBox.checked == true){
+              ppeDetails.style.display = "block";
+            } else {
+              ppeDetails.style.display = "none";
+            }
+        }
+        
         document.addEventListener('DOMContentLoaded', function() {
             displayPrinterDetailsSection();
+            displayVolunteerDetailsSection();
+            displayPPEDetailsSection()
         }, false);
     </script>
 
