@@ -95,7 +95,7 @@
 
                                 <i class="material-icons-outlined prefix">home</i>
 
-                                <input id="email" name="address" type="text" value="{{ old('address') }}">
+                                <input id="address" name="address" type="text" value="{{ old('address') }}">
 
                                 <label for="address">Address</label>
 
