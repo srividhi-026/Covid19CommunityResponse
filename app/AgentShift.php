@@ -12,9 +12,10 @@ class AgentShift extends Model
      * @var array
      */
     protected $fillable = [
-        'agent_id', 'monday_morning', 'monday_afternoon', 'tuesday_morning', 'tuesday_afternoon', 'wednesday_morning',
-        'wednesday_afternoon', 'thursday_morning', 'thursday_afternoon', 'friday_morning', 'friday_afternoon', 'saturday_morning',
-        'saturday_afternoon', 'sunday_morning', 'sunday_afternoon'
+        'agent_id', 'monday_morning', 'monday_afternoon', 'monday_evening', 'tuesday_morning', 'tuesday_afternoon',
+        'tuesday_evening', 'wednesday_morning', 'wednesday_afternoon', 'wednesday_evening', 'thursday_morning',
+        'thursday_afternoon', 'thursday_evening', 'friday_morning', 'friday_afternoon', 'friday_evening',
+        'saturday_morning', 'saturday_afternoon', 'saturday_evening', 'sunday_morning', 'sunday_afternoon', 'sunday_evening'
     ];
 
     /**

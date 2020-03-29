@@ -121,12 +121,27 @@
 
                             <div class="input-field col s12">
 
+                                <i class="material-icons-outlined prefix">email</i>
+
+                                <input id="email" name="email" type="email" value="{{ old('email') }}">
+
+                                <label for="email">Email</label>
+
+                                @if ($errors->has('email'))
+                                    <p class="error">{{ $errors->first('email') }}</p>
+                                @endif
+
+                            </div>
+
+                            <div class="input-field col s12">
+
                                 <table>
                                     <thead>
                                         <tr>
                                             <th>Day</th>
-                                            <th>Morning Shift (9.00am - 3.00pm)</th>
-                                            <th>Night Shift (3.00pm - 9.00pm)</th>
+                                            <th>9am - 1pm</th>
+                                            <th>1pm- 5pm</th>
+                                            <th>5pm - 9pm</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -141,6 +156,12 @@
                                             <td class="text-center">
                                                 <label>
                                                     <input class="with-gap" name="monday" type="radio" value="mon_afternoon"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="monday" type="radio" value="mon_evening"/>
                                                     <span></span>
                                                 </label>
                                             </td>
@@ -159,6 +180,12 @@
                                                     <span></span>
                                                 </label>
                                             </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="tuesday" type="radio" value="tues_evening"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Wednesday</td>
@@ -171,6 +198,12 @@
                                             <td class="text-center">
                                                 <label>
                                                     <input class="with-gap" name="wednesday" type="radio" value="wed_afternoon"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="wednesday" type="radio" value="wed_evening"/>
                                                     <span></span>
                                                 </label>
                                             </td>
@@ -189,6 +222,12 @@
                                                     <span></span>
                                                 </label>
                                             </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="thursday" type="radio" value="thurs_evening"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Friday</td>
@@ -201,6 +240,12 @@
                                             <td class="text-center">
                                                 <label>
                                                     <input class="with-gap" name="friday" type="radio" value="fri_afternoon"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="friday" type="radio" value="fri_evening"/>
                                                     <span></span>
                                                 </label>
                                             </td>
@@ -219,6 +264,12 @@
                                                     <span></span>
                                                 </label>
                                             </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="saturday" type="radio" value="sat_evening"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Sunday</td>
@@ -231,6 +282,12 @@
                                             <td class="text-center">
                                                 <label>
                                                     <input class="with-gap" name="sunday" type="radio" value="sun_afternoon"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                            <td class="text-center">
+                                                <label>
+                                                    <input class="with-gap" name="sunday" type="radio" value="sun_evening"/>
                                                     <span></span>
                                                 </label>
                                             </td>
