@@ -9,6 +9,12 @@
                     <ul class="footer-ul-margin">
 
                         <li>
+                            <a class="white-text" href="{{url('team')}}" target="_blank">
+                                Team
+                            </a>
+                        </li>
+
+                        <li>
                             <a class="white-text" href="https://www2.hse.ie/conditions/coronavirus/coronavirus.html" target="_blank">
                                 Official Information
                             </a>
@@ -17,12 +23,6 @@
                         <li>
                             <a class="white-text" href="{{url('privacy_policy')}}" target="_blank">
                                 Privacy Policy
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="white-text" href="{{url('team')}}" target="_blank">
-                                Team
                             </a>
                         </li>
 
