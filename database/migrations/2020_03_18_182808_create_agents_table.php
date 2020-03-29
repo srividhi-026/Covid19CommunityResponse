@@ -18,7 +18,8 @@ class CreateAgentsTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('address');
-            $table->integer('phone');
+            $table->string('email', 250)->unique();
+            $table->string('phone');
             $table->tinyInteger('confidentiality_agreement');
             $table->tinyInteger('privacy_policy');
             $table->tinyInteger('gdpr');
