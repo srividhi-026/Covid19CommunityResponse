@@ -81,70 +81,45 @@ class RegisterController
 
         if($request->printer === 'on'){
             PrinterDetails::create([
-                'user_id' => $user->id,
-                'make'    => $request->printer_make,
-                'model'     => $request->printer_model,
-                'material'     => $request->printer_material,
-                'notes'     => $request->printer_notes ? $request->printer_notes : '',
+                'user_id'  => $user->id,
+                'make'     => $request->printer_make,
+                'model'    => $request->printer_model,
+                'material' => $request->printer_material,
+                'notes'    => $request->printer_notes ? $request->printer_notes : '',
             ]);
         }
 
         if($request->ppe === 'on'){
             PPEDetails::create([
-                'user_id' => $user->id,
+                'user_id'                  => $user->id,
                 'ppe_supplies_description' => $request->ppe_supplies_description,
-                'volume' => $request->volume,
-                'eircode' => $request->eircode,
-                'availability_times' => $request->availability_times,
+                'volume'                   => $request->volume,
+                'eircode'                  => $request->eircode,
+                'availability_times'       => $request->availability_times,
             ]);
         }
 
         if ($user) {
             Session::flash('message', 'Thank you for registering and giving your support!');
 
-            // send acknowledgement to registered users.
-            $email_data = array(
-                template_item('user', $user->first_name),
-            );
-
-            $user_email_details = array(
-                'subject'       => 'Thanks for signing up',
-                'from_email'    => 'info@covidcommunityresponse.ie',
-                'from_name'     => '',
-                'to_email'      => $user->email,
-                'template_name' => 'ccr_register',
-                'template_data' => $email_data,
-            );
-
-            send_mandrill_email($user_email_details);
-
-            // send notification to CCR-19 team
-            $email_data = array(
-                template_item('user', $user->first_name. ' '. $user->last_name),
-                template_item('location', $user->county)
-            );
-
             if($request->ppe === 'on'){
-                $ccr_email_details = array(
-                    'subject'       => 'PPE Donation',
-                    'from_email'    => 'info@covidcommunityresponse.ie',
-                    'from_name'     => 'CCR-19',
-                    'to_email'      => 'covid19ire@gmail.com',
-                    'template_name' => 'ccr_register_notify',
-                    'template_data' => $email_data,
+                // send notification to CCR-19 team
+                $email_data = array(
+                    template_item('user', $user->first_name. ' '. $user->last_name),
+                    template_item('location', $user->county)
                 );
-            }else{
-                $ccr_email_details = array(
-                    'subject'       => 'New user registration',
-                    'from_email'    => 'info@covidcommunityresponse.ie',
-                    'from_name'     => 'CCR-19',
-                    'to_email'      => 'covid19ire@gmail.com',
-                    'template_name' => 'ccr_register_notify',
-                    'template_data' => $email_data,
-                );
-            }
 
-            send_mandrill_email($ccr_email_details);
+                $ccr_email_details = array(
+                    'subject'       => 'PPE Donation - CCR19',
+                    'from_email'    => 'info@covidcommunityresponse.ie',
+                    'from_name'     => 'CCR-19',
+                    'to_email'      => 'ppe@covidcommunityresponse.ie',
+                    'template_name' => 'ccr_register_notify',
+                    'template_data' => $email_data,
+                );
+
+                send_mandrill_email($ccr_email_details);
+            }
 
             $response = redirect('map');
         }
