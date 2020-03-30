@@ -2,7 +2,7 @@
 
 <div class="container">
 
-    <h4 class="text-center">Donate Your PPE on the National Register</h4>
+    <h4 class="text-center">Donate PPE (Personal Protective Equipment)</h4>
 
     <a href="{{url('/register', ['page' => 'ppe'])}}">
         <button id="call-to-action" type="button" class="btn btn-primary">Register Here</button>
@@ -18,7 +18,7 @@
                 Products:
         </h6></b>
         <ul>
-            <li><b>Personal Protective Equipment (PPE)</b>: Gloves, face-masks, face shields, bio-hazard suits and more</li>
+            <li>PPE: Gloves, face-masks, face shields, bio-hazard suits and more</li>
             <li>Walkie talkies and baby monitors</li>
         </ul>
     </div>
