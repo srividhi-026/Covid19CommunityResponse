@@ -23,7 +23,7 @@ Route::view('/3d-printers','homepage/3dprinters');
 Route::view('/donate-ppe','homepage/ppe');
 
 // auth forms
-Route::view('/register', 'auth_forms/register');
+Route::get('/register/{page}', 'RegisterController@show');
 Route::view('/agent_register', 'auth_forms/agent_register_form');
 
 // get requests

@@ -36,8 +36,10 @@ class RegisterController
      *
      * @return mixed
      */
-    public function show () {
-        return view('register');
+    public function show ($page) {
+        return view('auth_forms.register')->with([
+            'page' => $page
+        ]);
     }
 
     public function do_register (Request $request) {
@@ -50,7 +52,7 @@ class RegisterController
             'lng'            => 'required|regex:/^-?\d{1,2}\.\d{6,}$/',
             'county'         => 'required|string',
             'privacy_policy' => 'required',
-            'confidentiality'=> 'required', 
+            'confidentiality'=> 'required',
             'over18'         => 'required_if:volunteer,on',
             'printer_make' => 'required_if:printer,on',
             'printer_model' => 'required_if:printer,on',
@@ -86,7 +88,7 @@ class RegisterController
                 'notes'     => $request->printer_notes ? $request->printer_notes : '',
             ]);
         }
-        
+
         if($request->ppe === 'on'){
             PPEDetails::create([
                 'user_id' => $user->id,
