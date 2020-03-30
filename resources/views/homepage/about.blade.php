@@ -53,7 +53,7 @@
         Our volunteers work in a variety of roles. Many are out in their local communities offering
         assistance to their neighbours, or a community organisation. We also have
         people assisting on our national helpline, and coordinating our national network of volunteers.
-        If you’d like to help, please register <a href="https://covidcommunityresponse.ie/register">here</a>,
+        If you’d like to help, please register <a href="https://covidcommunityresponse.ie/register/home">here</a>,
         and a member of our team will be in touch with you.
     </p>
 
@@ -62,13 +62,13 @@
     <p class="para">
         Welcome on board! We have many roles that we need support with. If you need to self-isolate,
         or can’t leave home at all at this time, there is much you can help with. You can register
-        <a href="https://covidcommunityresponse.ie/register">here</a>.
+        <a href="https://covidcommunityresponse.ie/register/home">here</a>.
     </p>
 
     <h6><b>What Happens When I Register?</b></h6>
 
     <p class="para">
-        To volunteer, you can sign up <a href="https://covidcommunityresponse.ie/register">here</a>.
+        To volunteer, you can sign up <a href="https://covidcommunityresponse.ie/register/home">here</a>.
         Once you’ve done that, our team will be in touch should anyone require assistance in your area.
         We look forward to having you on board!
     </p>

@@ -2,10 +2,10 @@
 
 <div class="container">
 
-    <h4 class="text-center">Put Your PPE on the National Register</h4>
+    <h4 class="text-center">Donate Your PPE on the National Register</h4>
 
-    <a href="{{url('/register')}}">
-        <button id="call-to-action"  type="button" class="btn btn-primary">Register Here</button>
+    <a href="{{url('/register', ['page' => 'ppe'])}}">
+        <button id="call-to-action" type="button" class="btn btn-primary">Register Here</button>
     </a>
     <p class="para">
         During this crisis, we need our community to help one another as much as possible. If you have products or raw materials which can be used to protect our front-line staff and care workers, we will do our utmost to deliver them to those that need them.
@@ -18,7 +18,7 @@
                 Products:
         </h6></b>
         <ul>
-            <li>Personal Protective Equipment (PPE): Gloves, face-masks, face shields, bio-hazard suits and more</li>
+            <li><b>Personal Protective Equipment (PPE)</b>: Gloves, face-masks, face shields, bio-hazard suits and more</li>
             <li>Walkie talkies and baby monitors</li>
         </ul>
     </div>

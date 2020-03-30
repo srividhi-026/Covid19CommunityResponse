@@ -4,33 +4,33 @@
 
     <h4 class="text-center">Put Your 3D Printer on the National Register</h4>
 
-    <a href="{{url('/register')}}">
+    <a href="{{ url('register', ['page' => 'printer'] )}}">
         <button id="call-to-action"  type="button" class="btn btn-primary">Register Here</button>
     </a>
     <p class="para">
         We are looking to build a strong network of industrial grade 3D printers across the nation. If you have access or know someone with access to a printer, please click the register button above and fill out the form.
     </p>
-  
+
     <h6><b>
             Project Plan
     </h6></b>
-    
+
     <p>
-        The goal for this project is to connect manufacturers of essential medical supplies with Ireland’s health service and medical centres.  We have teamed up with manufacturing companies who are willing to lend us their expertise in the area as well as give us access to their 3D printers and clean rooms. By creating a centralised network of industrial grade printers, we can create a resource for the health service to request emergency medical supplies. 
+        The goal for this project is to connect manufacturers of essential medical supplies with Ireland’s health service and medical centres.  We have teamed up with manufacturing companies who are willing to lend us their expertise in the area as well as give us access to their 3D printers and clean rooms. By creating a centralised network of industrial grade printers, we can create a resource for the health service to request emergency medical supplies.
     </p>
     <p>
        The printers may be used for printing personal protective equipment or other medical devices, depending on the printers available. There has been an incredible effort by engineers and designers to build 3D models for these products such as open source ventilators and protective face shields, and we want to create a resource that they can potentially use to bring the products to fruition.
        We have operations facilities available in the National Science Park in Mullingar. There is also space available in ISO 7 grade clean rooms for the assembly of necessary parts.
     </p>
-    
+
     <p>
         Through this initiative, we are looking to utilise the large network of industrial 3D printers across Ireland so that our health service can contact and request printing as necessary.
     </p>
-    
+
     <p>
         We also have a full volunteer workforce with manufacturing experience ready to help to carry out this project. If you are interested in volunteering your printer, please register at the link above. If you have any queries or wish to offer your expertise, please contact gavin@carboncapture.io
     </p>
-    
+
     <div class="printer-images-container">
         <img src="{{url('/img/3Dventilator.jpg')}}" alt="3D ventilator image" class="responsive-img"/>
         <img src="{{url('/img/ppe.jpg')}}" alt="Protective equipment" class="responsive-img"/>
@@ -67,7 +67,7 @@
 
         <h6><b>5. Assembly</h6></b>
         <p>
-            The parts will then be brought in for assessment and then assembly. Tables are ready in the grade 7 cleanrooms, where the parts will be put together. 
+            The parts will then be brought in for assessment and then assembly. Tables are ready in the grade 7 cleanrooms, where the parts will be put together.
         </p>
 
 

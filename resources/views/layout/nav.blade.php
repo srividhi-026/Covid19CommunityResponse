@@ -35,12 +35,12 @@
                 </a>
 
             </li>
-            
+
             <li>
 
                 <a href="{{url('donate-ppe')}}" class="about">
 
-                    Donate PPE
+                    PPE
 
                 </a>
 
@@ -58,7 +58,7 @@
 
             <li>
 
-                <a href="{{ url('register') }}" class="about">
+                <a href="{{ url('register', ['page' => 'home'] )}}" class="about">
 
                     Register
 
@@ -88,12 +88,12 @@
 
         <a href="{{url('donate-ppe')}}" class="about">
 
-            Donate PPE
+            PPE
 
         </a>
 
     </li>
-    
+
     <li>
 
         <a href="{{ url('3d-printers') }}" class="about">
@@ -116,7 +116,7 @@
 
     <li>
 
-        <a href="{{ url('register') }}" class="about">
+        <a href="{{ url('register', ['page' => 'home'] )}}" class="about">
 
             Register
 

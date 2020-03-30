@@ -215,7 +215,7 @@
                                 <div id='lat-lng-map'></div>
 
                             </div>
-                            
+
                             <div class="input-field col s12">
 
                                 <label>
@@ -257,8 +257,8 @@
                                 @endif
 
                             </div>
-                            
-                            
+
+
                             <div class="input-field col s12">
 
                                 <label>
@@ -272,12 +272,12 @@
                                 <br>
 
                             </div>
-                            
+
                             <div class="input-field col s12">
 
                                 <label>
 
-                                    <input onclick="displayPPEDetailsSection()" id="ppe-details-checkbox" name="ppe" type="checkbox" class="filled-in" {{ old('ppe') ? 'checked' : '' }} />
+                                    <input onclick="displayPPEDetailsSection()" id="ppe-details-checkbox" name="ppe" type="checkbox" class="filled-in" {{ old('ppe') ? 'checked' : '' }} {{$page == 'ppe' ? 'checked' : ''}} />
 
                                     <span>Do you have access to Personal Protective Equipment which is available for donation?</span>
 
@@ -286,12 +286,12 @@
                                 <br>
 
                             </div>
-                            
+
                             <div class="input-field col s12">
 
                                 <label>
 
-                                    <input onclick="displayPrinterDetailsSection()" id="printer-details-checkbox" name="printer" type="checkbox" class="filled-in" {{ old('printer') ? 'checked' : '' }} />
+                                    <input onclick="displayPrinterDetailsSection()" id="printer-details-checkbox" name="printer" type="checkbox" class="filled-in" {{ old('printer') ? 'checked' : '' }} {{$page == 'printer' ? 'checked' : ''}}/>
 
                                     <span>Do you have access to a 3D printer?</span>
 
@@ -363,15 +363,15 @@
 
                                 </div>
                             </div>
-                        
+
                             <div id="printer-details">
                                 <h6><b>3D Printer Information</b></h6>
                                 <div class="input-field col s12">
 
                                     <label>3D Pinter Make</label>
-                                    
+
                                     <input name="printer_make" type="text" class="filled-in" value="{{ old('printer_make') }}" />
-                                    
+
                                     @if ($errors->has('printer_make'))
                                     <p class="error">{{ $errors->first('printer_make') }}</p>
                                     @endif
@@ -379,9 +379,9 @@
                                 <div class="input-field col s12">
 
                                     <label>3D Pinter Model</label>
-                                    
+
                                     <input name="printer_model" type="text" class="filled-in" value="{{ old('printer_model') }}"/>
-                                    
+
                                     @if ($errors->has('printer_model'))
                                     <p class="error">{{ $errors->first('printer_model') }}</p>
                                     @endif
@@ -389,76 +389,76 @@
                                 <div class="input-field col s12">
 
                                     <label>Material</label>
-                                    
+
                                     <input name="printer_material" type="text" class="filled-in" value="{{ old('printer_material') }}"/>
-                                    
+
                                     @if ($errors->has('printer_material'))
                                     <p class="error">{{ $errors->first('printer_material') }}</p>
                                     @endif
                                 </div>
-                                
+
                                 <div class="input-field col s12">
 
                                     <label>Notes</label>
-                                    
+
                                     <input name="printer_notes" type="text" class="filled-in" value="{{ old('printer_notes') }}"/>
-                                    
+
                                     @if ($errors->has('printer_notes'))
                                     <p class="error">{{ $errors->first('printer_notes') }}</p>
                                     @endif
                                 </div>
 
                             </div>
-                            
+
                             <div id="ppe-details">
                                 <h6><b>PPE Donations</b></h6>
                                 <div class="input-field col s12">
 
                                     <label>Please describe what PPE supplies you have for donation</label>
-                                    
+
                                     <input name="ppe_supplies_description" type="text" class="filled-in" value="{{ old('ppe_supplies_description') }}"/>
-                                    
+
                                     @if ($errors->has('ppe_supplies_description'))
                                     <p class="error">{{ $errors->first('ppe_supplies_description') }}</p>
                                     @endif
                                 </div>
-                                
+
                                 <div class="input-field col s12">
 
                                     <label>Volume of items for collection (How big is your package?)</label>
-                                    
+
                                     <input name="volume" type="text" class="filled-in" value="{{ old('volume') }}"/>
-                                    
+
                                     @if ($errors->has('volume'))
                                     <p class="error">{{ $errors->first('volume') }}</p>
                                     @endif
                                 </div>
-                            
+
                                 <div class="input-field col s12">
 
                                     <label>Eircode (To enable a quick pickup from our couriers)</label>
-                                    
+
                                     <input name="eircode" type="text" class="filled-in" value="{{ old('eircode') }}" />
-                                    
+
                                     @if ($errors->has('eircode'))
                                     <p class="error">{{ $errors->first('eircode') }}</p>
                                     @endif
                                 </div>
-                            
+
                                 <div class="input-field col s12">
 
                                     <label>General availability times for collection</label>
-                                    
+
                                     <input name="availability_times" type="text" class="filled-in" value="{{ old('availability_times') }}"/>
-                                    
+
                                     @if ($errors->has('availability_times'))
                                     <p class="error">{{ $errors->first('availability_times') }}</p>
                                     @endif
                                 </div>
                             </div>
-                            
+
                         </div>
-                        
+
                         <br>
 
                         <div class="row center">
@@ -513,7 +513,7 @@
             document.getElementById('lat-label').classList.add("active");
             document.getElementById('lng-label').classList.add("active");
         }
-        
+
         function displayPrinterDetailsSection() {
             // Get the checkbox
             var checkBox = document.getElementById("printer-details-checkbox");
@@ -527,7 +527,7 @@
               printerDetails.style.display = "none";
             }
         }
-        
+
         function displayVolunteerDetailsSection() {
             // Get the checkbox
             var checkBox = document.getElementById("volunteer-details-checkbox");
@@ -540,7 +540,7 @@
               volunteerDetails.style.display = "none";
             }
         }
-        
+
         function displayPPEDetailsSection() {
             // Get the checkbox
             var checkBox = document.getElementById("ppe-details-checkbox");
@@ -553,7 +553,7 @@
               ppeDetails.style.display = "none";
             }
         }
-        
+
         document.addEventListener('DOMContentLoaded', function() {
             displayPrinterDetailsSection();
             displayVolunteerDetailsSection();
