@@ -263,7 +263,7 @@
 
                                 <label>
 
-                                    <input onclick="displayVolunteerDetailsSection()" id="volunteer-details-checkbox" name="volunteer" type="checkbox" class="filled-in" {{ old('volunteer') ? 'checked' : '' }} />
+                                    <input onclick="displayVolunteerDetailsSection()" id="volunteer-details-checkbox" name="volunteer" type="checkbox" class="filled-in" {{ old('volunteer') ? 'checked' : '' }} {{$page == 'volunteer' ? 'checked' : ''}}/>
 
                                     <span>Do you wish to volunteer your time?</span>
 
