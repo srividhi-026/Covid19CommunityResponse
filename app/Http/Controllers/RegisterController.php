@@ -75,8 +75,8 @@ class RegisterController
             'driving'       => $request->driving == 'on' ? 1 : 0,
             'contact_email' => $request->contact_email == 'on' ? 1 : 0,
             'group'         => $request->group == 'on' ? 1 : 0,
-            'printer'     => $request->printer == 'on' ? 1 : 0,
-            'ppe'     => $request->ppe == 'on' ? 1 : 0
+            'printer'       => $request->printer == 'on' ? 1 : 0,
+            'ppe'           => $request->ppe == 'on' ? 1 : 0
         ]);
 
         if($request->printer === 'on'){
@@ -106,7 +106,11 @@ class RegisterController
                 // send notification to CCR-19 team
                 $email_data = array(
                     template_item('user', $user->first_name. ' '. $user->last_name),
-                    template_item('location', $user->county)
+                    template_item('location', $user->county),
+                    template_item('desc', $request->ppe_supplies_description),
+                    template_item('volume', $request->volume),
+                    template_item('eircode', $request->eircode),
+                    template_item('time', $request->availability_times)
                 );
 
                 $ccr_email_details = array(
