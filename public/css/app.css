@@ -242,6 +242,10 @@ footer{
     margin-left: 2rem !important;
 }
 
+.img-fit {
+    margin-left: 40%;
+    max-width: 20% !important;
+}
 
 @media only screen and (max-width: 600px) {
     footer {

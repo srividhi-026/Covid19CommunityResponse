@@ -15,7 +15,7 @@
 
             <div class="orange-container col s12 m6 orange-container">
 
-                <a href="{{url('register')}}" class="main-link">REGISTER TO VOLUNTEER</a>
+                <a href="{{url('/register', ['page' => 'volunteer'])}}" class="main-link">REGISTER TO VOLUNTEER</a>
 
             </div>
 
