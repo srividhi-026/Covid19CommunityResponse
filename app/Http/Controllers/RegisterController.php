@@ -107,6 +107,7 @@ class RegisterController
                 $email_data = array(
                     template_item('user', $user->first_name. ' '. $user->last_name),
                     template_item('location', $user->county),
+                    template_item('phone', $user->phone),
                     template_item('desc', $request->ppe_supplies_description ? $request->ppe_supplies_description : 'No description provided'),
                     template_item('volume', $request->volume ? $request->volume : '0'),
                     template_item('eircode', $request->eircode ? $request->eircode : 'no eircode'),
