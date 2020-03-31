@@ -4,6 +4,8 @@
 
     <h4 class="text-center">Donate PPE (Personal Protective Equipment)</h4>
 
+    <img src="{{url('/img/ppeLogo.png')}}" class="responsive-img" alt="Volunteer Logo"></img>
+
     <a href="{{url('/register', ['page' => 'ppe'])}}">
         <button id="call-to-action" type="button" class="btn btn-primary">Register Here</button>
     </a>
