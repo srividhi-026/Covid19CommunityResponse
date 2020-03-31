@@ -190,26 +190,26 @@ class RegisterController
 
         if ($agent) {
 
-            // send notification to CCR-19 team
-            $email_data = array(
-                template_item('user', $agent->first_name. ' '. $agent->last_name),
-                template_item('location', $agent->address)
-            );
+            // // send notification to CCR-19 team
+            // $email_data = array(
+            //     template_item('user', $agent->first_name. ' '. $agent->last_name),
+            //     template_item('location', $agent->address)
+            // );
 
-            $email_details = array(
-                'subject'       => 'New Agent registration',
-                'from_email'    => 'info@covidcommunityresponse.ie',
-                'from_name'     => 'CCR-19',
-                'to_email'      => 'covid19ire@gmail.com',
-                'template_name' => 'ccr_register_notify',
-                'template_data' => $email_data,
-            );
+            // $email_details = array(
+            //     'subject'       => 'New Agent registration',
+            //     'from_email'    => 'info@covidcommunityresponse.ie',
+            //     'from_name'     => 'CCR-19',
+            //     'to_email'      => 'covid19ire@gmail.com',
+            //     'template_name' => 'ccr_register_notify',
+            //     'template_data' => $email_data,
+            // );
 
-            send_mandrill_email($email_details);
+            // send_mandrill_email($email_details);
 
             Session::flash('message', 'Thank you for registering and giving your support!');
 
-            $response = redirect('/agent_register');
+            $response = redirect('agent_register');
         }
         else {
             $request->flash('error', 'There was an error saving your details, please try again.');

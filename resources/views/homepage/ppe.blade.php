@@ -6,7 +6,7 @@
 
     <img src="{{url('/img/ppeLogo.png')}}" class="responsive-img img-fit" alt="Volunteer Logo"></img>
 
-    <a href="{{url('/register', ['page' => 'ppe'])}}">
+    <a href="{{url('register', ['page' => 'ppe'])}}">
         <button id="call-to-action" type="button" class="btn btn-primary">Register Here</button>
     </a>
     <p class="para">
