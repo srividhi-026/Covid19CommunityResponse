@@ -107,15 +107,15 @@ class RegisterController
                 $email_data = array(
                     template_item('user', $user->first_name. ' '. $user->last_name),
                     template_item('location', $user->county),
-                    template_item('desc', $request->ppe_supplies_description),
-                    template_item('volume', $request->volume),
-                    template_item('eircode', $request->eircode),
-                    template_item('time', $request->availability_times)
+                    template_item('desc', $request->ppe_supplies_description ? $request->ppe_supplies_description : 'No description provided'),
+                    template_item('volume', $request->volume ? $request->volume : '0'),
+                    template_item('eircode', $request->eircode ? $request->eircode : 'no eircode'),
+                    template_item('time', $request->availability_times ? $request->availability_times : '0')
                 );
 
                 $ccr_email_details = array(
                     'subject'       => 'PPE Donation - CCR19',
-                    'from_email'    => 'info@covidcommunityresponse.ie',
+                    'from_email'    => 'ppe@covidcommunityresponse.ie',
                     'from_name'     => 'CCR-19',
                     'to_email'      => 'ppe@covidcommunityresponse.ie',
                     'template_name' => 'ccr_register_notify',
