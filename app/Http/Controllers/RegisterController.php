@@ -115,8 +115,9 @@ class RegisterController
 
                 $ccr_email_details = array(
                     'subject'       => 'PPE Donation - CCR19',
-                    'from_email'    => 'ppe@covidcommunityresponse.ie',
-                    'from_name'     => 'CCR-19',
+                    'from_email'    => $user->email,
+                    'reply_to'      => $user->email,
+                    'from_name'     => 'CovidCommunityResponse',
                     'to_email'      => 'ppe@covidcommunityresponse.ie',
                     'template_name' => 'ccr_register_notify',
                     'template_data' => $email_data,
