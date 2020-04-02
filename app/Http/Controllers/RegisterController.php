@@ -44,40 +44,61 @@ class RegisterController
 
     public function do_register (Request $request) {
         $request->validate([
-            'first_name'     => 'required|string',
-            'last_name'      => 'required|string',
-            'email'          => 'required|email|unique:users',
-            'phone'          => 'required',
-            'lat'            => 'required|regex:/^-?\d{1,2}\.\d{6,}$/',
-            'lng'            => 'required|regex:/^-?\d{1,2}\.\d{6,}$/',
-            'county'         => 'required|string',
-            'privacy_policy' => 'required',
-            'confidentiality'=> 'required',
-            'over18'         => 'required_if:volunteer,on',
-            'printer_make' => 'required_if:printer,on',
-            'printer_model' => 'required_if:printer,on',
-            'printer_material' => 'required_if:printer,on',
+            'first_name'               => 'required|string',
+            'last_name'                => 'required|string',
+            'email'                    => 'required|email|unique:users',
+            'phone'                    => 'required',
+            'lat'                      => 'required|regex:/^-?\d{1,2}\.\d{6,}$/',
+            'lng'                      => 'required|regex:/^-?\d{1,2}\.\d{6,}$/',
+            'county'                   => 'required|string',
+            'privacy_policy'           => 'required',
+            'confidentiality'          => 'required',
+            'over18'                   => 'required_if:volunteer,on',
+            'printer_make'             => 'required_if:printer,on',
+            'printer_model'            => 'required_if:printer,on',
+            'printer_material'         => 'required_if:printer,on',
             'ppe_supplies_description' => 'required_if:ppe,on',
-            'volume' => 'required_if:ppe,on',
-            'eircode' => 'required_if:ppe,on',
-            'availability_times' => 'required_if:ppe,on'
+            'volume'                   => 'required_if:ppe,on',
+            'eircode'                  => 'required_if:ppe,on',
+            'availability_times'       => 'required_if:ppe,on'
         ]);
 
-        $user = User::create([
-            'first_name'    => $request->first_name,
-            'last_name'     => $request->last_name,
-            'email'         => $request->email,
-            'phone'         => $request->phone,
-            'lat'           => $request->lat,
-            'lng'           => $request->lng,
-            'status'        => 1,
-            'county'        => $request->county,
-            'driving'       => $request->driving == 'on' ? 1 : 0,
-            'contact_email' => $request->contact_email == 'on' ? 1 : 0,
-            'group'         => $request->group == 'on' ? 1 : 0,
-            'printer'       => $request->printer == 'on' ? 1 : 0,
-            'ppe'           => $request->ppe == 'on' ? 1 : 0
-        ]);
+        $user = User::where('email', $request->email)->first();
+
+        if ($user) {
+            User::update([
+                'first_name'    => $request->first_name,
+                'last_name'     => $request->last_name,
+                'email'         => $request->email,
+                'phone'         => $request->phone,
+                'lat'           => $request->lat,
+                'lng'           => $request->lng,
+                'status'        => 1,
+                'county'        => $request->county,
+                'driving'       => $request->driving == 'on' ? 1 : 0,
+                'contact_email' => $request->contact_email == 'on' ? 1 : 0,
+                'group'         => $request->group == 'on' ? 1 : 0,
+                'printer'       => $request->printer == 'on' ? 1 : 0,
+                'ppe'           => $request->ppe == 'on' ? 1 : 0
+            ]);
+        }
+        else {
+            $user = User::create([
+                'first_name'    => $request->first_name,
+                'last_name'     => $request->last_name,
+                'email'         => $request->email,
+                'phone'         => $request->phone,
+                'lat'           => $request->lat,
+                'lng'           => $request->lng,
+                'status'        => 1,
+                'county'        => $request->county,
+                'driving'       => $request->driving == 'on' ? 1 : 0,
+                'contact_email' => $request->contact_email == 'on' ? 1 : 0,
+                'group'         => $request->group == 'on' ? 1 : 0,
+                'printer'       => $request->printer == 'on' ? 1 : 0,
+                'ppe'           => $request->ppe == 'on' ? 1 : 0
+           ]);
+        }
 
         if($request->printer === 'on'){
             PrinterDetails::create([
