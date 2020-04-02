@@ -46,7 +46,7 @@ class RegisterController
         $request->validate([
             'first_name'               => 'required|string',
             'last_name'                => 'required|string',
-            'email'                    => 'required|email|unique:users',
+            'email'                    => 'required|email',
             'phone'                    => 'required',
             'lat'                      => 'required|regex:/^-?\d{1,2}\.\d{6,}$/',
             'lng'                      => 'required|regex:/^-?\d{1,2}\.\d{6,}$/',
