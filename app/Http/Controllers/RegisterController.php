@@ -63,10 +63,12 @@ class RegisterController
             'availability_times'       => 'required_if:ppe,on'
         ]);
 
-        $user = User::where('email', $request->email)->first();
 
-        if ($user) {
-            User::update([
+        // If there's a user with the email in $request->email then update that
+        // If no matching model exists, create one.
+        $user =  User::updateOrCreate(
+            ['email' => $request->email],
+            [
                 'first_name'    => $request->first_name,
                 'last_name'     => $request->last_name,
                 'email'         => $request->email,
@@ -80,25 +82,8 @@ class RegisterController
                 'group'         => $request->group == 'on' ? 1 : 0,
                 'printer'       => $request->printer == 'on' ? 1 : 0,
                 'ppe'           => $request->ppe == 'on' ? 1 : 0
-            ]);
-        }
-        else {
-            $user = User::create([
-                'first_name'    => $request->first_name,
-                'last_name'     => $request->last_name,
-                'email'         => $request->email,
-                'phone'         => $request->phone,
-                'lat'           => $request->lat,
-                'lng'           => $request->lng,
-                'status'        => 1,
-                'county'        => $request->county,
-                'driving'       => $request->driving == 'on' ? 1 : 0,
-                'contact_email' => $request->contact_email == 'on' ? 1 : 0,
-                'group'         => $request->group == 'on' ? 1 : 0,
-                'printer'       => $request->printer == 'on' ? 1 : 0,
-                'ppe'           => $request->ppe == 'on' ? 1 : 0
-           ]);
-        }
+            ]
+        );
 
         if($request->printer === 'on'){
             PrinterDetails::create([
