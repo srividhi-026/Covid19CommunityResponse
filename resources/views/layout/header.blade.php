@@ -37,6 +37,20 @@
             gtag('config', 'UA-160803470-1');
         </script>
 
+        <!-- Start of ccrhelp Zendesk Widget script -->
+        <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=cd1a91d0-ab7a-4bdc-9d4e-0e51b294a7e6"> </script>
+
+        <!-- End of ccrhelp Zendesk Widget script -->
+        <script type="text/javascript">
+            window.zESettings = {
+                webWidget: {
+                    color: {
+                        theme: '#F68841',
+                        launcherText: '#FFF',
+                    }
+                }
+            };
+        </script>
     </head>
 
     <body>
